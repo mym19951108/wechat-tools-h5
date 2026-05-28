@@ -1,8 +1,8 @@
 <template>
   <header class="tool-header">
-    <button class="back-btn" @click="goBack" v-if="showBack">&#8592;</button>
+    <button type="button" class="back-btn" @click="goBack" v-if="showBack">&#8592;</button>
     <h2 class="tool-title">{{ title }}</h2>
-    <div class="header-spacer"></div>
+    <div class="header-spacer" v-if="showBack"></div>
   </header>
 </template>
 
@@ -41,6 +41,8 @@ const goBack = () => router.back()
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   color: #07c160;
+  min-width: 44px;
+  min-height: 44px;
 }
 .header-spacer {
   width: 2rem;
