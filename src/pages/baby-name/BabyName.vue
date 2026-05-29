@@ -23,11 +23,8 @@
             <button type="button" :class="['gender-btn', { active: gender === 'any' }]" @click="gender = 'any'">不限</button>
           </div>
         </div>
-        <button type="button" class="generate-btn" @click="doGenerate" :disabled="!surname.trim()">
-          生成名字
-        </button>
+        <button type="button" class="generate-btn" @click="doGenerate" :disabled="!surname.trim()">生成名字</button>
       </div>
-
       <div v-if="smartNames.length > 0" class="results-area">
         <h3 class="results-title">为你生成 {{ smartNames.length }} 个名字</h3>
         <div class="name-list">
@@ -72,14 +69,18 @@
           </select>
         </div>
         <button type="button" class="generate-btn" @click="doBaziAnalyze" :disabled="!baziSurname.trim() || !baziDate || baziLoading">
-          {{ baziLoading ? '正在分析八字，请稍候...' : '分析八字取名' }}
+          {{ baziLoading ? baziSteps[baziCurrentStep] || '分析中...' : '分析八字取名' }}
         </button>
       </div>
 
-      <!-- Loading -->
-      <div v-if="baziLoading" class="loading-box">
-        <span class="loading-spinner">&#9696;</span>
-        <p>正在分析八字，请稍候...</p>
+      <!-- Staged Loading -->
+      <div v-if="baziLoading" class="loading-area">
+        <div class="loading-steps">
+          <div v-for="(step, idx) in baziSteps" :key="idx" class="step-row" :class="{ done: idx < baziCurrentStep, active: idx === baziCurrentStep }">
+            <span class="step-icon">{{ idx < baziCurrentStep ? '✓' : idx === baziCurrentStep ? '→' : '○' }}</span>
+            <span class="step-text">{{ step }}</span>
+          </div>
+        </div>
       </div>
 
       <!-- Bazi Results -->
@@ -109,23 +110,14 @@
             </div>
           </div>
           <div class="bazi-info">
-            <div class="bazi-info-row">
-              <span>农历: {{ baziResult.lunarDate }}</span>
-            </div>
-            <div class="bazi-info-row">
-              <span>日主: {{ baziResult.dayPillar.stem }}({{ baziResult.dayStemWx }})</span>
-            </div>
+            <div class="bazi-info-row"><span>农历: {{ baziResult.lunarDate }}</span></div>
+            <div class="bazi-info-row"><span>日主: {{ baziResult.dayPillar.stem }}({{ baziResult.dayStemWx }})</span></div>
             <div class="wuxing-bar">
-              <span v-for="wx in wuxingDisplay" :key="wx.name" class="wuxing-chip" :class="{ missing: wx.count === 0 }">
-                {{ wx.name }}{{ wx.count }}
-              </span>
+              <span v-for="wx in wuxingDisplay" :key="wx.name" class="wuxing-chip" :class="{ missing: wx.count === 0 }">{{ wx.name }}{{ wx.count }}</span>
             </div>
             <div class="xiji-box">
               <p>{{ baziResult.xiji.description }}</p>
-              <p class="xiji-detail">
-                喜用神: <strong>{{ baziResult.xiji.xiShen.join('、') }}</strong>
-                &ensp;忌神: <strong>{{ baziResult.xiji.jiShen.join('、') }}</strong>
-              </p>
+              <p class="xiji-detail">喜用神: <strong>{{ baziResult.xiji.xiShen.join('、') }}</strong> &ensp;忌神: <strong>{{ baziResult.xiji.jiShen.join('、') }}</strong></p>
             </div>
           </div>
           <p class="disclaimer">* 以上分析仅供参考，不构成命理建议</p>
@@ -140,23 +132,17 @@
             </div>
             <div class="name-meta">
               <span class="name-wuxing">五行: {{ name.wuxing }}</span>
-              <span class="name-tag">{{ name.reason }}</span>
+              <span :class="['level-tag', 'level-' + name.level]">{{ levelIcon(name.level) }} {{ name.levelLabel }}</span>
             </div>
-            <div class="poetry-box">
-              <div class="poetry-item">
-                <span class="poetry-char">{{ name.char1 }}</span>
-                <div class="poetry-content">
-                  <p class="poetry-text">「{{ getPoetry(name.char1).text || '暂无典籍记录' }}」</p>
-                  <span class="poetry-source" v-if="getPoetry(name.char1).source">—— {{ getPoetry(name.char1).source }}</span>
-                </div>
-              </div>
-              <div class="poetry-item">
-                <span class="poetry-char">{{ name.char2 }}</span>
-                <div class="poetry-content">
-                  <p class="poetry-text">「{{ getPoetry(name.char2).text || '暂无典籍记录' }}」</p>
-                  <span class="poetry-source" v-if="getPoetry(name.char2).source">—— {{ getPoetry(name.char2).source }}</span>
-                </div>
-              </div>
+            <div class="score-bar">
+              <span class="sb-item">喜忌: {{ name.scoreBreakdown.xiji }}</span>
+              <span class="sb-item">诗词: {{ name.scoreBreakdown.poetry }}</span>
+              <span class="sb-item">音韵: {{ name.scoreBreakdown.sound }}</span>
+              <span class="sb-item">寓意: {{ name.scoreBreakdown.meaning }}</span>
+            </div>
+            <div v-if="name.poetry" class="poetry-box">
+              <p class="poetry-text" v-html="highlightChars(name.poetry.text, name.char1, name.char2)"></p>
+              <span class="poetry-source">—— {{ name.poetry.source }}</span>
             </div>
           </div>
         </div>
@@ -180,12 +166,10 @@ import { generateBaziNames } from './BaziNameEngine.js'
 
 const mode = ref('bazi')
 
-// Smart naming
 const surname = ref('')
 const gender = ref('boy')
 const smartNames = ref([])
 
-// Bazi naming
 const baziSurname = ref('')
 const baziGender = ref('boy')
 const baziDate = ref('')
@@ -193,14 +177,12 @@ const baziHour = ref(12)
 const baziLoading = ref(false)
 const baziResult = ref(null)
 const baziNames = ref([])
-const poetryCache = ref(null)
+
+const baziSteps = ['推算八字排盘', '分析五行喜忌', '匹配诗词典籍', '生成名字并打分']
+const baziCurrentStep = ref(0)
 
 const wuxingDisplay = reactive([
-  { name: '金', count: 0 },
-  { name: '木', count: 0 },
-  { name: '水', count: 0 },
-  { name: '火', count: 0 },
-  { name: '土', count: 0 }
+  { name: '金', count: 0 }, { name: '木', count: 0 }, { name: '水', count: 0 }, { name: '火', count: 0 }, { name: '土', count: 0 }
 ])
 
 const hours = Array.from({ length: 24 }, (_, i) => ({
@@ -208,24 +190,27 @@ const hours = Array.from({ length: 24 }, (_, i) => ({
   label: `${String(i).padStart(2, '0')}:00 - ${String((i + 1) % 24).padStart(2, '0')}:00`
 }))
 
+function delay(ms) { return new Promise(r => setTimeout(r, ms)) }
+
 function doGenerate() {
   smartNames.value = generateNames({ surname: surname.value, gender: gender.value })
 }
 
 async function doBaziAnalyze() {
   baziLoading.value = true
-  await nextTick()
+  baziCurrentStep.value = 0
   baziResult.value = null
   baziNames.value = []
+  await nextTick()
 
   const [year, month, day] = baziDate.value.split('-').map(Number)
-
   const bazi = analyzeBazi(year, month, day, baziHour.value)
-  baziResult.value = bazi
+  await delay(600)
+  baziCurrentStep.value = 1
 
-  for (const wx of wuxingDisplay) {
-    wx.count = bazi.wuxingCount[wx.name]
-  }
+  for (const wx of wuxingDisplay) wx.count = bazi.wuxingCount[wx.name]
+  await delay(600)
+  baziCurrentStep.value = 2
 
   baziNames.value = generateBaziNames({
     surname: baziSurname.value,
@@ -233,49 +218,36 @@ async function doBaziAnalyze() {
     xiShen: bazi.xiji.xiShen,
     jiShen: bazi.xiji.jiShen
   })
+  await delay(800)
+  baziCurrentStep.value = 3
 
-  if (!poetryCache.value) {
-    const mod = await import('../../data/poetry-map.js')
-    poetryCache.value = mod.poetryMap
-  }
+  baziResult.value = bazi
+  await delay(500)
+  baziCurrentStep.value = 4
 
   baziLoading.value = false
 }
 
-function getPoetry(char) {
-  if (!poetryCache.value || !poetryCache.value[char] || poetryCache.value[char].length === 0) {
-    return { text: '暂无典籍记录', source: '' }
-  }
-  const entry = poetryCache.value[char][0]
-  return { text: entry.text, source: entry.source }
+function levelIcon(level) {
+  if (level === 'sameLine') return '🔴'
+  if (level === 'samePoem') return '🟡'
+  return '⚪'
+}
+
+function highlightChars(text, char1, char2) {
+  if (!text) return ''
+  let html = text
+  html = html.replace(new RegExp(char1, 'g'), `<span class="hl">${char1}</span>`)
+  html = html.replace(new RegExp(char2, 'g'), `<span class="hl">${char2}</span>`)
+  return html
 }
 </script>
 
 <style scoped>
-/* Tabs */
-.tabs {
-  display: flex;
-  margin: 1rem 1rem 0;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.tab {
-  flex: 1;
-  padding: 0.7rem 0;
-  border: none;
-  background: #fff;
-  font-size: 0.95rem;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  font-weight: 500;
-}
-.tab.active {
-  color: #07c160;
-  border-bottom-color: #07c160;
-}
+.tabs { display: flex; margin: 1rem 1rem 0; background: #fff; border-radius: 8px; overflow: hidden; }
+.tab { flex: 1; padding: 0.7rem 0; border: none; background: #fff; font-size: 0.95rem; cursor: pointer; border-bottom: 2px solid transparent; font-weight: 500; }
+.tab.active { color: #07c160; border-bottom-color: #07c160; }
 
-/* Form */
 .form-area { padding: 1rem; display: flex; flex-direction: column; gap: 1rem; }
 .form-row { display: flex; align-items: center; gap: 0.75rem; }
 .form-label { width: 4.5rem; font-weight: 600; font-size: 0.95rem; flex-shrink: 0; }
@@ -287,17 +259,17 @@ function getPoetry(char) {
 .generate-btn { padding: 0.75rem; background: #07c160; color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
 .generate-btn:disabled { background: #ccc; cursor: not-allowed; }
 
-/* Loading */
-.loading-box { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 2rem; color: #888; }
-.loading-spinner { font-size: 2rem; animation: spin 1s linear infinite; display: inline-block; }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.loading-area { padding: 1.5rem 2rem; }
+.loading-steps { display: flex; flex-direction: column; gap: 0.75rem; }
+.step-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: #bbb; }
+.step-row.active { color: #333; font-weight: 600; }
+.step-row.done { color: #07c160; }
+.step-icon { width: 1.5rem; text-align: center; }
 
-/* Results */
 .results-area { padding: 0 1rem 1rem; }
 .section-title, .results-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; }
 .results-title { margin-top: 1rem; }
 
-/* Bazi chart */
 .bazi-card { background: #fff; border-radius: 10px; padding: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 .bazi-chart { display: flex; justify-content: space-around; margin-bottom: 0.75rem; padding: 0.75rem 0; background: #fafaf8; border-radius: 6px; }
 .bazi-column { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
@@ -313,23 +285,26 @@ function getPoetry(char) {
 .xiji-detail { margin-top: 0.25rem; }
 .disclaimer { margin-top: 0.5rem; font-size: 0.65rem; color: #bbb; text-align: right; }
 
-/* Name cards */
 .name-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .name-card { background: #fff; border-radius: 8px; padding: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 .name-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; }
 .name-text { font-size: 1.2rem; font-weight: 700; color: #333; }
 .name-score { font-size: 0.85rem; font-weight: 600; color: #07c160; }
-.name-meta { display: flex; gap: 0.75rem; font-size: 0.75rem; color: #888; margin-bottom: 0.35rem; align-items: center; }
+.name-meta { display: flex; gap: 0.75rem; font-size: 0.75rem; color: #888; margin-bottom: 0.25rem; align-items: center; }
 .name-wuxing { color: #888; }
 .name-chars { color: #888; }
 .name-meaning { font-size: 0.8rem; color: #666; line-height: 1.5; }
-.name-tag { padding: 0.1rem 0.4rem; background: #e8f5e9; color: #07c160; border-radius: 3px; font-size: 0.7rem; }
 
-/* Poetry */
-.poetry-box { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #f0f0f0; }
-.poetry-item { display: flex; gap: 0.5rem; margin-bottom: 0.35rem; }
-.poetry-char { flex-shrink: 0; width: 1.4rem; height: 1.4rem; display: flex; align-items: center; justify-content: center; background: #f0faf4; color: #07c160; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-.poetry-content { flex: 1; }
-.poetry-text { font-size: 0.78rem; color: #555; line-height: 1.5; }
+.level-tag { padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.level-sameLine { background: #ffeaea; color: #e74c3c; }
+.level-samePoem { background: #fff8e1; color: #f39c12; }
+.level-wuxing { background: #f0f0f0; color: #999; }
+
+.score-bar { display: flex; gap: 0.75rem; margin-bottom: 0.35rem; font-size: 0.7rem; color: #888; }
+.sb-item { display: flex; align-items: center; gap: 0.15rem; }
+
+.poetry-box { margin-top: 0.35rem; padding-top: 0.35rem; border-top: 1px solid #f0f0f0; }
+.poetry-text { font-size: 0.8rem; color: #555; line-height: 1.6; }
+.poetry-text :deep(.hl) { color: #e74c3c; font-weight: 700; }
 .poetry-source { font-size: 0.7rem; color: #aaa; }
 </style>
