@@ -142,21 +142,9 @@
               <span class="sb-item">音韵: {{ name.scoreBreakdown.sound }}</span>
               <span class="sb-item">寓意: {{ name.scoreBreakdown.meaning }}</span>
             </div>
-            <div class="poetry-box">
-              <div class="poetry-item" v-if="name.poetry1.text">
-                <span class="poetry-char">{{ name.char1 }}</span>
-                <div class="poetry-content">
-                  <p class="poetry-text" v-html="highlightChar(name.poetry1.text, name.char1)"></p>
-                  <span class="poetry-source" v-if="name.poetry1.source">—— {{ name.poetry1.source }}</span>
-                </div>
-              </div>
-              <div class="poetry-item" v-if="name.poetry2.text">
-                <span class="poetry-char">{{ name.char2 }}</span>
-                <div class="poetry-content">
-                  <p class="poetry-text" v-html="highlightChar(name.poetry2.text, name.char2)"></p>
-                  <span class="poetry-source" v-if="name.poetry2.source">—— {{ name.poetry2.source }}</span>
-                </div>
-              </div>
+            <div v-if="name.poetry" class="poetry-box">
+              <p class="poetry-text" v-html="highlightChars(name.poetry.text, name.char1, name.char2)"></p>
+              <span class="poetry-source">—— {{ name.poetry.source }}</span>
             </div>
           </div>
         </div>
@@ -248,9 +236,12 @@ function levelIcon(level) {
   return '⚪'
 }
 
-function highlightChar(text, ch) {
-  if (!text || !ch) return ''
-  return text.replace(new RegExp(ch, 'g'), `<span class="hl">${ch}</span>`)
+function highlightChars(text, char1, char2) {
+  if (!text) return ''
+  let html = text
+  html = html.replace(new RegExp(char1, 'g'), `<span class="hl">${char1}</span>`)
+  html = html.replace(new RegExp(char2, 'g'), `<span class="hl">${char2}</span>`)
+  return html
 }
 </script>
 
@@ -319,7 +310,4 @@ function highlightChar(text, ch) {
 .poetry-text { font-size: 0.8rem; color: #555; line-height: 1.6; }
 .poetry-text :deep(.hl) { color: #e74c3c; font-weight: 700; }
 .poetry-source { font-size: 0.7rem; color: #aaa; }
-.poetry-item { display: flex; gap: 0.5rem; margin-bottom: 0.35rem; }
-.poetry-char { flex-shrink: 0; width: 1.4rem; height: 1.4rem; display: flex; align-items: center; justify-content: center; background: #f0faf4; color: #07c160; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-.poetry-content { flex: 1; }
 </style>
