@@ -129,15 +129,15 @@ function scanDirectory(dir, label) {
 
 function cloneRepo() {
   if (fs.existsSync(DATA_DIR)) {
-    console.log('Data already cloned, pulling...')
-    try { execSync('git pull', { cwd: DATA_DIR, stdio: 'inherit' }) } catch {}
-    return
+    console.log('Removing old data...')
+    fs.rmSync(DATA_DIR, { recursive: true, force: true })
   }
-  console.log('Cloning chinese-poetry (shallow)...')
+  console.log('Sparse cloning chinese-poetry (only shijing/chuci/json/ci)...')
   execSync(
-    `git clone --depth 1 --filter=blob:none https://github.com/chinese-poetry/chinese-poetry.git "${DATA_DIR}"`,
+    `git clone --depth 1 --filter=blob:none --sparse https://github.com/chinese-poetry/chinese-poetry.git "${DATA_DIR}"`,
     { stdio: 'inherit' }
   )
+  execSync('git sparse-checkout set shijing chuci json ci', { cwd: DATA_DIR, stdio: 'inherit' })
 }
 
 function buildNameChars(allNames) {
