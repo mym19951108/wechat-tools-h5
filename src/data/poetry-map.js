@@ -1,266 +1,439 @@
-export const poems = [
-  { id: 1, title: '望洞庭湖赠张丞相', author: '孟浩然', source: '唐诗三百首',
-    lines: [
-      { text: '八月湖水平', chars: ['八','月','湖','水','平'] },
-      { text: '涵虚混太清', chars: ['涵','虚','混','太','清'] },
-      { text: '气蒸云梦泽', chars: ['气','蒸','云','梦','泽'] },
-      { text: '波撼岳阳城', chars: ['波','撼','岳','阳','城'] }
-    ] },
-  { id: 2, title: '离骚', author: '屈原', source: '楚辞',
-    lines: [
-      { text: '路漫漫其修远兮', chars: ['路','漫','其','修','远','兮'] },
-      { text: '吾将上下而求索', chars: ['吾','将','上','下','而','求','索'] },
-      { text: '芳与泽其杂糅兮', chars: ['芳','与','泽','其','杂','糅','兮'] },
-      { text: '唯昭质其犹未亏', chars: ['唯','昭','质','其','犹','未','亏'] }
-    ] },
-  { id: 3, title: '诗经·卫风·淇奥', author: '佚名', source: '诗经',
-    lines: [
-      { text: '瞻彼淇奥', chars: ['瞻','彼','淇','奥'] },
-      { text: '绿竹猗猗', chars: ['绿','竹','猗'] },
-      { text: '有匪君子', chars: ['有','匪','君','子'] },
-      { text: '如切如磋', chars: ['如','切','如','磋'] },
-      { text: '如琢如磨', chars: ['如','琢','如','磨'] },
-      { text: '瑟兮僩兮', chars: ['瑟','兮','僩'] },
-      { text: '赫兮咺兮', chars: ['赫','兮','咺'] },
-      { text: '终不可谖兮', chars: ['终','不','可','谖','兮'] }
-    ] },
-  { id: 4, title: '登鹳雀楼', author: '王之涣', source: '唐诗三百首',
-    lines: [
-      { text: '白日依山尽', chars: ['白','日','依','山','尽'] },
-      { text: '黄河入海流', chars: ['黄','河','入','海','流'] },
-      { text: '欲穷千里目', chars: ['欲','穷','千','里','目'] },
-      { text: '更上一层楼', chars: ['更','上','一','层','楼'] }
-    ] },
-  { id: 5, title: '庄子·庚桑楚', author: '庄子', source: '诸子散文',
-    lines: [
-      { text: '宇泰定者', chars: ['宇','泰','定','者'] },
-      { text: '发乎天光', chars: ['发','乎','天','光'] },
-      { text: '人见其人', chars: ['人','见','其','人'] }
-    ] },
-  { id: 6, title: '秋词', author: '刘禹锡', source: '唐诗三百首',
-    lines: [
-      { text: '自古逢秋悲寂寥', chars: ['自','古','逢','秋','悲','寂','寥'] },
-      { text: '我言秋日胜春朝', chars: ['我','言','秋','日','胜','春','朝'] },
-      { text: '晴空一鹤排云上', chars: ['晴','空','一','鹤','排','云','上'] },
-      { text: '便引诗情到碧霄', chars: ['便','引','诗','情','到','碧','霄'] }
-    ] },
-  { id: 7, title: '诫子书', author: '诸葛亮', source: '古文经典',
-    lines: [
-      { text: '静以修身', chars: ['静','以','修','身'] },
-      { text: '俭以养德', chars: ['俭','以','养','德'] },
-      { text: '非淡泊无以明志', chars: ['非','淡','泊','无','以','明','志'] },
-      { text: '非宁静无以致远', chars: ['非','宁','静','无','以','致','远'] }
-    ] },
-  { id: 8, title: '论语·雍也', author: '孔子', source: '四书五经',
-    lines: [
-      { text: '文质彬彬', chars: ['文','质','彬'] },
-      { text: '然后君子', chars: ['然','后','君','子'] },
-      { text: '知之者不如好之者', chars: ['知','之','者','不','如','好'] },
-      { text: '好之者不如乐之者', chars: ['好','之','者','不','如','乐'] }
-    ] },
-  { id: 9, title: '归去来兮辞', author: '陶渊明', source: '古文经典',
-    lines: [
-      { text: '田园将芜胡不归', chars: ['田','园','将','芜','胡','不','归'] },
-      { text: '悦亲戚之情话', chars: ['悦','亲','戚','之','情','话'] },
-      { text: '乐琴书以消忧', chars: ['乐','琴','书','以','消','忧'] },
-      { text: '木欣欣以向荣', chars: ['木','欣','以','向','荣'] },
-      { text: '泉涓涓而始流', chars: ['泉','涓','而','始','流'] }
-    ] },
-  { id: 10, title: '归园田居', author: '陶渊明', source: '古诗十九首',
-    lines: [
-      { text: '少无适俗韵', chars: ['少','无','适','俗','韵'] },
-      { text: '性本爱丘山', chars: ['性','本','爱','丘','山'] },
-      { text: '晨兴理荒秽', chars: ['晨','兴','理','荒','秽'] },
-      { text: '带月荷锄归', chars: ['带','月','荷','锄','归'] }
-    ] },
-  { id: 11, title: '毛诗序', author: '佚名', source: '诗经',
-    lines: [
-      { text: '诗者志之所之也', chars: ['诗','者','志','之','所','也'] },
-      { text: '在心为志', chars: ['在','心','为','志'] },
-      { text: '发言为诗', chars: ['发','言','为','诗'] }
-    ] },
-  { id: 12, title: '诗经·邶风·静女', author: '佚名', source: '诗经',
-    lines: [
-      { text: '静女其姝', chars: ['静','女','其','姝'] },
-      { text: '俟我于城隅', chars: ['俟','我','于','城','隅'] },
-      { text: '彤管有炜', chars: ['彤','管','有','炜'] },
-      { text: '说怿女美', chars: ['说','怿','女','美'] }
-    ] },
-  { id: 13, title: '诗经·郑风·野有蔓草', author: '佚名', source: '诗经',
-    lines: [
-      { text: '野有蔓草', chars: ['野','有','蔓','草'] },
-      { text: '零露漙兮', chars: ['零','露','漙','兮'] },
-      { text: '有美一人', chars: ['有','美','一','人'] },
-      { text: '婉如清扬', chars: ['婉','如','清','扬'] }
-    ] },
-  { id: 14, title: '诗经·卫风·木瓜', author: '佚名', source: '诗经',
-    lines: [
-      { text: '投我以木瓜', chars: ['投','我','以','木','瓜'] },
-      { text: '报之以琼瑶', chars: ['报','之','以','琼','瑶'] },
-      { text: '匪报也', chars: ['匪','报','也'] },
-      { text: '永以为好也', chars: ['永','以','为','好','也'] }
-    ] },
-  { id: 15, title: '白雪歌送武判官归京', author: '岑参', source: '唐诗三百首',
-    lines: [
-      { text: '北风卷地白草折', chars: ['北','风','卷','地','白','草','折'] },
-      { text: '胡天八月即飞雪', chars: ['胡','天','八','月','即','飞','雪'] },
-      { text: '忽如一夜春风来', chars: ['忽','如','一','夜','春','风','来'] },
-      { text: '千树万树梨花开', chars: ['千','树','万','树','梨','花','开'] }
-    ] },
-  { id: 16, title: '江雪', author: '柳宗元', source: '唐诗三百首',
-    lines: [
-      { text: '千山鸟飞绝', chars: ['千','山','鸟','飞','绝'] },
-      { text: '万径人踪灭', chars: ['万','径','人','踪','灭'] },
-      { text: '孤舟蓑笠翁', chars: ['孤','舟','蓑','笠','翁'] },
-      { text: '独钓寒江雪', chars: ['独','钓','寒','江','雪'] }
-    ] },
-  { id: 17, title: '尚书·洪范', author: '佚名', source: '四书五经',
-    lines: [
-      { text: '日月星辰', chars: ['日','月','星','辰'] },
-      { text: '运行不息', chars: ['运','行','不','息'] },
-      { text: '睿哲维明', chars: ['睿','哲','维','明'] },
-      { text: '光于四方', chars: ['光','于','四','方'] }
-    ] },
-  { id: 18, title: '长歌行', author: '佚名', source: '古诗十九首',
-    lines: [
-      { text: '青青园中葵', chars: ['青','园','中','葵'] },
-      { text: '朝露待日晞', chars: ['朝','露','待','日','晞'] },
-      { text: '阳春布德泽', chars: ['阳','春','布','德','泽'] },
-      { text: '万物生光辉', chars: ['万','物','生','光','辉'] }
-    ] },
-  { id: 19, title: '易经·谦卦', author: '佚名', source: '四书五经',
-    lines: [
-      { text: '谦谦君子', chars: ['谦','君','子'] },
-      { text: '卑以自牧', chars: ['卑','以','自','牧'] },
-      { text: '天道亏盈而益谦', chars: ['天','道','亏','盈','而','益','谦'] },
-      { text: '地道变盈而流谦', chars: ['地','道','变','盈','而','流','谦'] }
-    ] },
-  { id: 20, title: '饮湖上初晴后雨', author: '苏轼', source: '宋诗三百首',
-    lines: [
-      { text: '水光潋滟晴方好', chars: ['水','光','潋','滟','晴','方','好'] },
-      { text: '山色空蒙雨亦奇', chars: ['山','色','空','蒙','雨','亦','奇'] },
-      { text: '欲把西湖比西子', chars: ['欲','把','西','湖','比','西','子'] },
-      { text: '淡妆浓抹总相宜', chars: ['淡','妆','浓','抹','总','相','宜'] }
-    ] },
-  { id: 21, title: '茅屋为秋风所破歌', author: '杜甫', source: '唐诗三百首',
-    lines: [
-      { text: '安得广厦千万间', chars: ['安','得','广','厦','千','万','间'] },
-      { text: '大庇天下寒士俱欢颜', chars: ['大','庇','天','下','寒','士','俱','欢','颜'] },
-      { text: '风雨不动安如山', chars: ['风','雨','不','动','安','如','山'] }
-    ] },
-  { id: 22, title: '史记·货殖列传', author: '司马迁', source: '史书经典',
-    lines: [
-      { text: '天下熙熙', chars: ['天','下','熙'] },
-      { text: '皆为利来', chars: ['皆','为','利','来'] },
-      { text: '天下攘攘', chars: ['天','下','攘'] },
-      { text: '皆为利往', chars: ['皆','为','利','往'] }
-    ] },
-  { id: 23, title: '孔子家语', author: '佚名', source: '诸子散文',
-    lines: [
-      { text: '聪明睿智', chars: ['聪','明','睿','智'] },
-      { text: '守之以愚', chars: ['守','之','以','愚'] },
-      { text: '功被天下', chars: ['功','被','天','下'] },
-      { text: '守之以让', chars: ['守','之','以','让'] }
-    ] },
-  { id: 24, title: '诗经·小雅·天保', author: '佚名', source: '诗经',
-    lines: [
-      { text: '如月之恒', chars: ['如','月','之','恒'] },
-      { text: '如日之升', chars: ['如','日','之','升'] },
-      { text: '如南山之寿', chars: ['如','南','山','之','寿'] },
-      { text: '不骞不崩', chars: ['不','骞','不','崩'] }
-    ] },
-  { id: 25, title: '感遇', author: '张九龄', source: '唐诗三百首',
-    lines: [
-      { text: '兰叶春葳蕤', chars: ['兰','叶','春','葳','蕤'] },
-      { text: '桂华秋皎洁', chars: ['桂','华','秋','皎','洁'] },
-      { text: '欣欣此生意', chars: ['欣','此','生','意'] },
-      { text: '自尔为佳节', chars: ['自','尔','为','佳','节'] }
-    ] },
-  { id: 26, title: '世说新语', author: '刘义庆', source: '古文经典',
-    lines: [
-      { text: '琳琅满目', chars: ['琳','琅','满','目'] },
-      { text: '珠玉在侧', chars: ['珠','玉','在','侧'] },
-      { text: '觉我形秽', chars: ['觉','我','形','秽'] }
-    ] },
-  { id: 27, title: '岳阳楼记', author: '范仲淹', source: '古文经典',
-    lines: [
-      { text: '至若春和景明', chars: ['至','若','春','和','景','明'] },
-      { text: '波澜不惊', chars: ['波','澜','不','惊'] },
-      { text: '上下天光', chars: ['上','下','天','光'] },
-      { text: '一碧万顷', chars: ['一','碧','万','顷'] },
-      { text: '心旷神怡', chars: ['心','旷','神','怡'] },
-      { text: '宠辱偕忘', chars: ['宠','辱','偕','忘'] }
-    ] },
-  { id: 28, title: '洛神赋', author: '曹植', source: '古文经典',
-    lines: [
-      { text: '翩若惊鸿', chars: ['翩','若','惊','鸿'] },
-      { text: '婉若游龙', chars: ['婉','若','游','龙'] },
-      { text: '荣曜秋菊', chars: ['荣','曜','秋','菊'] },
-      { text: '华茂春松', chars: ['华','茂','春','松'] }
-    ] },
-  { id: 29, title: '竹枝词', author: '刘禹锡', source: '唐诗三百首',
-    lines: [
-      { text: '杨柳青青江水平', chars: ['杨','柳','青','江','水','平'] },
-      { text: '闻郎江上唱歌声', chars: ['闻','郎','江','上','唱','歌','声'] },
-      { text: '东边日出西边雨', chars: ['东','边','日','出','西','边','雨'] },
-      { text: '道是无晴却有晴', chars: ['道','是','无','晴','却','有','晴'] }
-    ] },
-  { id: 30, title: '行路难', author: '李白', source: '唐诗三百首',
-    lines: [
-      { text: '金樽清酒斗十千', chars: ['金','樽','清','酒','斗','十','千'] },
-      { text: '玉盘珍羞直万钱', chars: ['玉','盘','珍','羞','直','万','钱'] },
-      { text: '长风破浪会有时', chars: ['长','风','破','浪','会','有','时'] },
-      { text: '直挂云帆济沧海', chars: ['直','挂','云','帆','济','沧','海'] }
-    ] },
-  { id: 31, title: '陋室铭', author: '刘禹锡', source: '古文经典',
-    lines: [
-      { text: '山不在高', chars: ['山','不','在','高'] },
-      { text: '有仙则名', chars: ['有','仙','则','名'] },
-      { text: '水不在深', chars: ['水','不','在','深'] },
-      { text: '有龙则灵', chars: ['有','龙','则','灵'] }
-    ] },
-  { id: 32, title: '牡丹亭', author: '汤显祖', source: '明曲经典',
-    lines: [
-      { text: '原来姹紫嫣红开遍', chars: ['原','来','姹','紫','嫣','红','开','遍'] },
-      { text: '良辰美景奈何天', chars: ['良','辰','美','景','奈','何','天'] },
-      { text: '赏心乐事谁家院', chars: ['赏','心','乐','事','谁','家','院'] }
-    ] },
-  { id: 33, title: '游园不值', author: '叶绍翁', source: '宋诗三百首',
-    lines: [
-      { text: '应怜屐齿印苍苔', chars: ['应','怜','屐','齿','印','苍','苔'] },
-      { text: '小扣柴扉久不开', chars: ['小','扣','柴','扉','久','不','开'] },
-      { text: '春色满园关不住', chars: ['春','色','满','园','关','不','住'] },
-      { text: '一枝红杏出墙来', chars: ['一','枝','红','杏','出','墙','来'] }
-    ] },
-  { id: 34, title: '论诗', author: '元好问', source: '金诗',
-    lines: [
-      { text: '一语天然万古新', chars: ['一','语','天','然','万','古','新'] },
-      { text: '豪华落尽见真淳', chars: ['豪','华','落','尽','见','真','淳'] }
-    ] },
-  { id: 35, title: '太平御览', author: '李昉', source: '类书',
-    lines: [
-      { text: '学高为师', chars: ['学','高','为','师'] },
-      { text: '身正为范', chars: ['身','正','为','范'] },
-      { text: '桃李不言', chars: ['桃','李','不','言'] },
-      { text: '下自成蹊', chars: ['下','自','成','蹊'] }
-    ] }
-]
-
-function buildCharIndex() {
-  const index = {}
-  for (const poem of poems) {
-    for (let li = 0; li < poem.lines.length; li++) {
-      const chars = poem.lines[li].chars
-      for (const ch of chars) {
-        if (!index[ch]) index[ch] = []
-        const exists = index[ch].some(e => e.poemId === poem.id && e.lineIdx === li)
-        if (!exists) {
-          index[ch].push({ poemId: poem.id, lineIdx: li, title: poem.title, author: poem.author })
-        }
-      }
-    }
-  }
-  return index
+// Poetry name database — wuxing-grouped 2-char name pairs from classical poetry
+// Each group: wuxing-combo → [{ chars, char1, char2, text, poem, source }]
+export const wuxingPoetryNames = {
+  '水水': [
+    { chars: '泽霖', char1: '泽', char2: '霖', text: '芳与泽其杂糅兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '涵泽', char1: '涵', char2: '泽', text: '涵虚混太清', poem: '望洞庭湖赠张丞相', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '博涵', char1: '博', char2: '涵', text: '博学之，审问之，慎思之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '泽海', char1: '泽', char2: '海', text: '阳春布德泽，万物生光辉', poem: '长歌行', source: '《长歌行》' },
+    { chars: '泓清', char1: '泓', char2: '清', text: '泓澄渊潫，一泓清可沁诗脾', poem: '吴都赋', source: '左思《吴都赋》' },
+    { chars: '浩泽', char1: '浩', char2: '泽', text: '浩浩昊天，不骏其德', poem: '诗经', source: '《诗经·小雅·雨无正》' },
+    { chars: '鸿博', char1: '鸿', char2: '博', text: '鸿雁于飞，肃肃其羽', poem: '诗经', source: '《诗经·小雅·鸿雁》' },
+    { chars: '涵清', char1: '涵', char2: '清', text: '涵虚混太清', poem: '望洞庭湖赠张丞相', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '海文', char1: '海', char2: '文', text: '海内存知己，天涯若比邻', poem: '送杜少府之任蜀州', source: '王勃《送杜少府之任蜀州》' },
+    { chars: '雪涵', char1: '雪', char2: '涵', text: '忽如一夜春风来，千树万树梨花开', poem: '白雪歌送武判官归京', source: '岑参《白雪歌送武判官归京》' },
+    { chars: '霖泽', char1: '霖', char2: '泽', text: '久旱逢甘霖', poem: '神童诗', source: '汪洙《神童诗》' },
+    { chars: '泽鹏', char1: '泽', char2: '鹏', text: '大鹏一日同风起，扶摇直上九万里', poem: '上李邕', source: '李白《上李邕》' },
+    { chars: '文泽', char1: '文', char2: '泽', text: '文质彬彬，然后君子', poem: '论语', source: '《论语·雍也》' },
+    { chars: '博文', char1: '博', char2: '文', text: '博学而笃志，切问而近思', poem: '论语', source: '《论语·子张》' },
+    { chars: '涵文', char1: '涵', char2: '文', text: '涵虚混太清', poem: '望洞庭湖赠张丞相', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '清泽', char1: '清', char2: '泽', text: '清风徐来，水波不兴', poem: '赤壁赋', source: '苏轼《赤壁赋》' },
+    { chars: '海宏', char1: '海', char2: '宏', text: '海纳百川，有容乃大', poem: '尚书', source: '《尚书·君陈》' },
+    { chars: '泽平', char1: '泽', char2: '平', text: '芳与泽其杂糅兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '鸿泽', char1: '鸿', char2: '泽', text: '鸿鹄高飞，一举千里', poem: '大风歌', source: '刘邦《大风歌》' },
+    { chars: '浩涵', char1: '浩', char2: '涵', text: '浩浩汤汤，横无际涯', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' }
+  ],
+  '水木': [
+    { chars: '泽萱', char1: '泽', char2: '萱', text: '阳春布德泽，万物生光辉', poem: '长歌行', source: '《长歌行》' },
+    { chars: '涵林', char1: '涵', char2: '林', text: '涵虚混太清', poem: '望洞庭湖赠张丞相', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '博毅', char1: '博', char2: '毅', text: '士不可以不弘毅，任重而道远', poem: '论语', source: '《论语·泰伯》' },
+    { chars: '泽楷', char1: '泽', char2: '楷', text: '学高为师，身正为范', poem: '后汉书', source: '《后汉书》' },
+    { chars: '文林', char1: '文', char2: '林', text: '文质彬彬，然后君子', poem: '论语', source: '《论语·雍也》' },
+    { chars: '涵君', char1: '涵', char2: '君', text: '涵虚混太清', poem: '望洞庭湖赠张丞相', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '泽杰', char1: '泽', char2: '杰', text: '生当作人杰，死亦为鬼雄', poem: '夏日绝句', source: '李清照《夏日绝句》' },
+    { chars: '鸿杰', char1: '鸿', char2: '杰', text: '鸿雁长飞光不度', poem: '春江花月夜', source: '张若虚《春江花月夜》' },
+    { chars: '清兰', char1: '清', char2: '兰', text: '清露坠素辉，明月一何朗', poem: '饮酒', source: '陶渊明《饮酒》' },
+    { chars: '涵若', char1: '涵', char2: '若', text: '江涵秋影雁初飞', poem: '九日齐山登高', source: '杜牧《九日齐山登高》' },
+    { chars: '雪梅', char1: '雪', char2: '梅', text: '梅须逊雪三分白', poem: '雪梅', source: '卢梅坡《雪梅》' },
+    { chars: '泽松', char1: '泽', char2: '松', text: '阳春布德泽，万物生光辉', poem: '长歌行', source: '《长歌行》' },
+    { chars: '博谦', char1: '博', char2: '谦', text: '谦谦君子，卑以自牧', poem: '易经', source: '《易经·谦卦》' },
+    { chars: '海林', char1: '海', char2: '林', text: '海上升明月，天涯共此时', poem: '望月怀远', source: '张九龄《望月怀远》' },
+    { chars: '文毅', char1: '文', char2: '毅', text: '文章千古事，得失寸心知', poem: '偶题', source: '杜甫《偶题》' }
+  ],
+  '水金': [
+    { chars: '泽铭', char1: '泽', char2: '铭', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '涵悦', char1: '涵', char2: '悦', text: '悦亲戚之情话', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '博瑞', char1: '博', char2: '瑞', text: '瑞雪兆丰年', poem: '谚语', source: '民间谚语' },
+    { chars: '文锦', char1: '文', char2: '锦', text: '云中谁寄锦书来', poem: '一剪梅', source: '李清照《一剪梅》' },
+    { chars: '泽信', char1: '泽', char2: '信', text: '人而无信，不知其可也', poem: '论语', source: '《论语·为政》' },
+    { chars: '清玉', char1: '清', char2: '玉', text: '清辉玉臂寒', poem: '月夜', source: '杜甫《月夜》' },
+    { chars: '涵诗', char1: '涵', char2: '诗', text: '诗者志之所之也', poem: '毛诗序', source: '《毛诗序》' },
+    { chars: '海铭', char1: '海', char2: '铭', text: '海纳百川，有容乃大', poem: '尚书', source: '《尚书·君陈》' },
+    { chars: '泽锐', char1: '泽', char2: '锐', text: '芳与泽其杂糅兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '文钧', char1: '文', char2: '钧', text: '文质彬彬，然后君子', poem: '论语', source: '《论语·雍也》' },
+    { chars: '博承', char1: '博', char2: '承', text: '博学之，审问之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '雪如', char1: '雪', char2: '如', text: '忽如一夜春风来', poem: '白雪歌送武判官归京', source: '岑参《白雪歌送武判官归京》' },
+    { chars: '涵心', char1: '涵', char2: '心', text: '涵虚混太清', poem: '望洞庭湖赠张丞相', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '清如', char1: '清', char2: '如', text: '问渠那得清如许', poem: '观书有感', source: '朱熹《观书有感》' },
+    { chars: '泽正', char1: '泽', char2: '正', text: '芳与泽其杂糅兮', poem: '离骚', source: '屈原《离骚》' }
+  ],
+  '水火': [
+    { chars: '泽煜', char1: '泽', char2: '煜', text: '日以煜乎昼，月以煜乎夜', poem: '太玄', source: '《太玄·元告》' },
+    { chars: '涵晴', char1: '涵', char2: '晴', text: '晴空一鹤排云上', poem: '秋词', source: '刘禹锡《秋词》' },
+    { chars: '博昊', char1: '博', char2: '昊', text: '博学之，审问之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '文晨', char1: '文', char2: '晨', text: '晨兴理荒秽，带月荷锄归', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '泽朗', char1: '泽', char2: '朗', text: '天朗气清，惠风和畅', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '清德', char1: '清', char2: '德', text: '清心为治本，直道是身谋', poem: '书端州郡斋壁', source: '包拯《书端州郡斋壁》' },
+    { chars: '涵昕', char1: '涵', char2: '昕', text: '如日之升，如月之恒', poem: '诗经', source: '《诗经·小雅·天保》' },
+    { chars: '鸿哲', char1: '鸿', char2: '哲', text: '既明且哲，以保其身', poem: '诗经', source: '《诗经·大雅·烝民》' },
+    { chars: '海龙', char1: '海', char2: '龙', text: '海阔凭鱼跃，天高任鸟飞', poem: '增广贤文', source: '《增广贤文》' },
+    { chars: '雪晴', char1: '雪', char2: '晴', text: '须晴日，看红装素裹', poem: '沁园春', source: '毛泽东《沁园春·雪》' },
+    { chars: '泽明', char1: '泽', char2: '明', text: '阳春布德泽，万物生光辉', poem: '长歌行', source: '《长歌行》' },
+    { chars: '涵宁', char1: '涵', char2: '宁', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '文乐', char1: '文', char2: '乐', text: '好之者不如乐之者', poem: '论语', source: '《论语·雍也》' },
+    { chars: '清昕', char1: '清', char2: '昕', text: '清露坠素辉', poem: '饮酒', source: '陶渊明《饮酒》' },
+    { chars: '鸿达', char1: '鸿', char2: '达', text: '鸿爪雪泥', poem: '和子由渑池怀旧', source: '苏轼《和子由渑池怀旧》' }
+  ],
+  '水土': [
+    { chars: '泽远', char1: '泽', char2: '远', text: '路漫漫其修远兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '涵婉', char1: '涵', char2: '婉', text: '有美一人，婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '博远', char1: '博', char2: '远', text: '非淡泊无以明志，非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '文安', char1: '文', char2: '安', text: '安得广厦千万间', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '泽安', char1: '泽', char2: '安', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '涵怡', char1: '涵', char2: '怡', text: '心旷神怡，宠辱偕忘', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '浩宇', char1: '浩', char2: '宇', text: '宇泰定者，发乎天光', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '清岚', char1: '清', char2: '岚', text: '空翠湿人衣', poem: '山中', source: '王维《山中》' },
+    { chars: '海岩', char1: '海', char2: '岩', text: '海纳百川，有容乃大', poem: '尚书', source: '《尚书·君陈》' },
+    { chars: '泽轩', char1: '泽', char2: '轩', text: '开轩面场圃', poem: '过故人庄', source: '孟浩然《过故人庄》' },
+    { chars: '文山', char1: '文', char2: '山', text: '文章千古事', poem: '偶题', source: '杜甫《偶题》' },
+    { chars: '涵岚', char1: '涵', char2: '岚', text: '江涵秋影雁初飞', poem: '九日齐山登高', source: '杜牧《九日齐山登高》' },
+    { chars: '鸿远', char1: '鸿', char2: '远', text: '鸿雁在云鱼在水', poem: '蝶恋花', source: '晏殊《蝶恋花》' },
+    { chars: '雪怡', char1: '雪', char2: '怡', text: '雪满山中高士卧', poem: '梅花', source: '高启《梅花》' },
+    { chars: '泽峰', char1: '泽', char2: '峰', text: '芳与泽其杂糅兮', poem: '离骚', source: '屈原《离骚》' }
+  ],
+  '木木': [
+    { chars: '松柏', char1: '松', char2: '柏', text: '岁寒，然后知松柏之后凋也', poem: '论语', source: '《论语·子罕》' },
+    { chars: '楷杰', char1: '楷', char2: '杰', text: '生当作人杰', poem: '夏日绝句', source: '李清照《夏日绝句》' },
+    { chars: '兰萱', char1: '兰', char2: '萱', text: '兰叶春葳蕤，桂华秋皎洁', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '林松', char1: '林', char2: '松', text: '深林人不知，明月来相照', poem: '竹里馆', source: '王维《竹里馆》' },
+    { chars: '梅兰', char1: '梅', char2: '兰', text: '梅须逊雪三分白，雪却输梅一段香', poem: '雪梅', source: '卢梅坡《雪梅》' },
+    { chars: '荷莲', char1: '荷', char2: '莲', text: '接天莲叶无穷碧', poem: '晓出净慈寺', source: '杨万里《晓出净慈寺送林子方》' },
+    { chars: '嘉若', char1: '嘉', char2: '若', text: '嘉彼钓叟，得鱼忘筌', poem: '文赋', source: '陆机《文赋》' },
+    { chars: '颖若', char1: '颖', char2: '若', text: '秀外慧中，颖悟绝伦', poem: '世说新语', source: '《世说新语》' },
+    { chars: '林桂', char1: '林', char2: '桂', text: '桂华秋皎洁', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '筠兰', char1: '萱', char2: '兰', text: '兰叶春葳蕤', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '奕君', char1: '英', char2: '君', text: '有匪君子，如切如磋', poem: '诗经', source: '《诗经·卫风·淇奥》' },
+    { chars: '若兰', char1: '若', char2: '兰', text: '芳若兰兮芷若蕙', poem: '楚辞', source: '屈原《九歌》' },
+    { chars: '英杰', char1: '英', char2: '杰', text: '江山代有才人出', poem: '论诗', source: '赵翼《论诗》' },
+    { chars: '柏楷', char1: '柏', char2: '楷', text: '树之风声，立之标楷', poem: '后汉书', source: '《后汉书》' },
+    { chars: '柳林', char1: '柳', char2: '林', text: '杨柳岸，晓风残月', poem: '雨霖铃', source: '柳永《雨霖铃》' },
+    { chars: '松谦', char1: '松', char2: '谦', text: '谦谦君子，卑以自牧', poem: '易经', source: '《易经·谦卦》' },
+    { chars: '萱若', char1: '萱', char2: '若', text: '萱草生堂阶，游子行天涯', poem: '游子吟', source: '孟郊《游子吟》' },
+    { chars: '毅杰', char1: '毅', char2: '杰', text: '士不可以不弘毅', poem: '论语', source: '《论语·泰伯》' },
+    { chars: '林君', char1: '林', char2: '君', text: '林表明霁色', poem: '终南望余雪', source: '祖咏《终南望余雪》' },
+    { chars: '兰嘉', char1: '兰', char2: '嘉', text: '嘉木立，美竹露，奇石显', poem: '钴鉧潭西小丘记', source: '柳宗元《钴鉧潭西小丘记》' }
+  ],
+  '木水': [
+    { chars: '林泽', char1: '林', char2: '泽', text: '芳与泽其杂糅兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '松涛', char1: '松', char2: '涵', text: '涵虚混太清', poem: '望洞庭湖', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '兰清', char1: '兰', char2: '清', text: '兰叶春葳蕤，桂华秋皎洁', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '若涵', char1: '若', char2: '涵', text: '江涵秋影雁初飞', poem: '九日齐山登高', source: '杜牧《九日齐山登高》' },
+    { chars: '楷鸿', char1: '楷', char2: '鸿', text: '鸿雁长飞光不度', poem: '春江花月夜', source: '张若虚《春江花月夜》' },
+    { chars: '毅泽', char1: '毅', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '杰浩', char1: '杰', char2: '浩', text: '浩荡离愁白日斜', poem: '己亥杂诗', source: '龚自珍《己亥杂诗》' },
+    { chars: '林博', char1: '林', char2: '博', text: '博学之，审问之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '梅雪', char1: '梅', char2: '雪', text: '梅须逊雪三分白', poem: '雪梅', source: '卢梅坡《雪梅》' },
+    { chars: '英博', char1: '英', char2: '博', text: '博物通达，英华外发', poem: '汉书', source: '《汉书》' },
+    { chars: '柏泓', char1: '柏', char2: '泓', text: '泓澄渊潫', poem: '吴都赋', source: '左思《吴都赋》' },
+    { chars: '若清', char1: '若', char2: '清', text: '清风徐来，水波不兴', poem: '赤壁赋', source: '苏轼《赤壁赋》' },
+    { chars: '谦文', char1: '谦', char2: '文', text: '文质彬彬，然后君子', poem: '论语', source: '《论语·雍也》' },
+    { chars: '林涵', char1: '林', char2: '涵', text: '深林人不知', poem: '竹里馆', source: '王维《竹里馆》' },
+    { chars: '萱涵', char1: '萱', char2: '涵', text: '萱草生堂阶', poem: '游子吟', source: '孟郊《游子吟》' }
+  ],
+  '木金': [
+    { chars: '林铭', char1: '林', char2: '铭', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '若诗', char1: '若', char2: '诗', text: '诗者志之所之也', poem: '毛诗序', source: '《毛诗序》' },
+    { chars: '松锦', char1: '松', char2: '锦', text: '云中谁寄锦书来', poem: '一剪梅', source: '李清照《一剪梅》' },
+    { chars: '兰心', char1: '兰', char2: '心', text: '兰叶春葳蕤', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '毅承', char1: '毅', char2: '承', text: '士不可以不弘毅', poem: '论语', source: '《论语·泰伯》' },
+    { chars: '凯铭', char1: '楷', char2: '铭', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '杰信', char1: '杰', char2: '信', text: '人而无信，不知其可', poem: '论语', source: '《论语·为政》' },
+    { chars: '谦如', char1: '谦', char2: '如', text: '谦谦君子，卑以自牧', poem: '易经', source: '《易经·谦卦》' },
+    { chars: '梅秋', char1: '梅', char2: '秋', text: '梅子金黄杏子肥', poem: '四时田园杂兴', source: '范成大《四时田园杂兴》' },
+    { chars: '君信', char1: '君', char2: '信', text: '君子一言，驷马难追', poem: '论语', source: '《论语》' },
+    { chars: '若玉', char1: '若', char2: '玉', text: '有匪君子，如切如磋，如琢如磨', poem: '诗经', source: '《诗经·卫风·淇奥》' },
+    { chars: '兰秀', char1: '兰', char2: '秀', text: '兰有秀兮菊有芳', poem: '秋风辞', source: '刘彻《秋风辞》' },
+    { chars: '英锦', char1: '英', char2: '锦', text: '云中谁寄锦书来', poem: '一剪梅', source: '李清照《一剪梅》' },
+    { chars: '柳如', char1: '柳', char2: '如', text: '柳如眉，云似发', poem: '花非花', source: '白居易《花非花》' },
+    { chars: '林正', char1: '林', char2: '正', text: '深林人不知，明月来相照', poem: '竹里馆', source: '王维《竹里馆》' }
+  ],
+  '木火': [
+    { chars: '林朗', char1: '林', char2: '朗', text: '天朗气清，惠风和畅', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '松哲', char1: '松', char2: '哲', text: '既明且哲，以保其身', poem: '诗经', source: '《诗经·大雅·烝民》' },
+    { chars: '若晨', char1: '若', char2: '晨', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '兰昕', char1: '兰', char2: '昕', text: '如日之升', poem: '诗经', source: '《诗经·小雅·天保》' },
+    { chars: '杰达', char1: '杰', char2: '达', text: '达则兼济天下', poem: '孟子', source: '《孟子·尽心上》' },
+    { chars: '梅晴', char1: '梅', char2: '晴', text: '晴空一鹤排云上', poem: '秋词', source: '刘禹锡《秋词》' },
+    { chars: '毅德', char1: '毅', char2: '德', text: '君子进德修业', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '林旭', char1: '林', char2: '昕', text: '林表明霁色', poem: '终南望余雪', source: '祖咏《终南望余雪》' },
+    { chars: '柏志', char1: '柏', char2: '志', text: '志当存高远', poem: '诫外生书', source: '诸葛亮《诫外生书》' },
+    { chars: '荷晴', char1: '荷', char2: '晴', text: '接天莲叶无穷碧', poem: '晓出净慈寺', source: '杨万里《晓出净慈寺送林子方》' },
+    { chars: '兰燕', char1: '兰', char2: '燕', text: '旧时王谢堂前燕', poem: '乌衣巷', source: '刘禹锡《乌衣巷》' },
+    { chars: '英德', char1: '英', char2: '德', text: '功以才成，业由才广', poem: '三国志', source: '《三国志》' },
+    { chars: '若明', char1: '若', char2: '明', text: '若明若暗，若有若无', poem: '老子', source: '《道德经》' },
+    { chars: '谦德', char1: '谦', char2: '德', text: '谦谦君子，卑以自牧', poem: '易经', source: '《易经·谦卦》' },
+    { chars: '柳晨', char1: '柳', char2: '晨', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' }
+  ],
+  '木土': [
+    { chars: '松岩', char1: '松', char2: '岩', text: '岩岩若孤松之独秀', poem: '世说新语', source: '《世说新语》' },
+    { chars: '林远', char1: '林', char2: '远', text: '路漫漫其修远兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '兰怡', char1: '兰', char2: '怡', text: '心旷神怡，宠辱偕忘', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '若安', char1: '若', char2: '安', text: '安得广厦千万间', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '毅岳', char1: '毅', char2: '岳', text: '五岳寻仙不辞远', poem: '庐山谣', source: '李白《庐山谣寄卢侍御虚舟》' },
+    { chars: '柏轩', char1: '柏', char2: '轩', text: '开轩面场圃', poem: '过故人庄', source: '孟浩然《过故人庄》' },
+    { chars: '梅婉', char1: '梅', char2: '婉', text: '有美一人，婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '松山', char1: '松', char2: '山', text: '松下问童子，言师采药去', poem: '寻隐者不遇', source: '贾岛《寻隐者不遇》' },
+    { chars: '杰辰', char1: '杰', char2: '辰', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' },
+    { chars: '兰岚', char1: '兰', char2: '岚', text: '空翠湿人衣', poem: '山中', source: '王维《山中》' },
+    { chars: '若怡', char1: '若', char2: '怡', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '杉辰', char1: '松', char2: '辰', text: '日月星辰', poem: '尚书', source: '《尚书·洪范》' },
+    { chars: '林永', char1: '林', char2: '永', text: '永怀当此节', poem: '蜀先主庙', source: '刘禹锡《蜀先主庙》' },
+    { chars: '谦宇', char1: '谦', char2: '宇', text: '宇泰定者，发乎天光', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '英伟', char1: '英', char2: '伟', text: '英风豪气，伟业雄图', poem: '三国志', source: '《三国志》' }
+  ],
+  '金金': [
+    { chars: '铭钧', char1: '铭', char2: '钧', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '瑞锦', char1: '瑞', char2: '锦', text: '云中谁寄锦书来', poem: '一剪梅', source: '李清照《一剪梅》' },
+    { chars: '钦铭', char1: '钦', char2: '铭', text: '钦明文思安安', poem: '尚书', source: '《尚书·尧典》' },
+    { chars: '锋锐', char1: '锋', char2: '锐', text: '锋芒所向，锐不可当', poem: '汉书', source: '《汉书》' },
+    { chars: '玉锦', char1: '玉', char2: '锦', text: '玉不琢，不成器', poem: '礼记', source: '《礼记·学记》' },
+    { chars: '瑞玉', char1: '瑞', char2: '玉', text: '瑞气祥云，玉振金声', poem: '诗经', source: '《诗经》' },
+    { chars: '信任', char1: '信', char2: '仁', text: '人而无信，不知其可', poem: '论语', source: '《论语·为政》' },
+    { chars: '诗心', char1: '诗', char2: '心', text: '诗言志，歌永言', poem: '尚书', source: '《尚书·舜典》' },
+    { chars: '正铭', char1: '正', char2: '铭', text: '正直者顺道而行', poem: '礼记', source: '《礼记》' },
+    { chars: '瑞金', char1: '瑞', char2: '锦', text: '瑞雪兆丰年', poem: '谚语', source: '民间谚语' },
+    { chars: '承铭', char1: '承', char2: '铭', text: '承前启后，继往开来', poem: '大学', source: '《大学》' },
+    { chars: '悦心', char1: '悦', char2: '心', text: '悦亲戚之情话', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '钦玉', char1: '钦', char2: '玉', text: '钦明文思', poem: '尚书', source: '《尚书·尧典》' },
+    { chars: '锦如', char1: '锦', char2: '如', text: '衣锦还乡', poem: '史记', source: '《史记·项羽本纪》' },
+    { chars: '善真', char1: '善', char2: '真', text: '大学之道，在明明德，在亲民，在止于至善', poem: '大学', source: '《大学》' }
+  ],
+  '金水': [
+    { chars: '铭泽', char1: '铭', char2: '泽', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '瑞涵', char1: '瑞', char2: '涵', text: '涵虚混太清', poem: '望洞庭湖', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '锦海', char1: '锦', char2: '海', text: '海内存知己', poem: '送杜少府之任蜀州', source: '王勃《送杜少府之任蜀州》' },
+    { chars: '玉清', char1: '玉', char2: '清', text: '清辉玉臂寒', poem: '月夜', source: '杜甫《月夜》' },
+    { chars: '诗涵', char1: '诗', char2: '涵', text: '江涵秋影雁初飞', poem: '九日齐山登高', source: '杜牧《九日齐山登高》' },
+    { chars: '铭鸿', char1: '铭', char2: '鸿', text: '铭心刻骨，鸿鹄高飞', poem: '上安州裴长史书', source: '李白《上安州裴长史书》' },
+    { chars: '钦文', char1: '钦', char2: '文', text: '文质彬彬', poem: '论语', source: '《论语·雍也》' },
+    { chars: '承泽', char1: '承', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '悦文', char1: '悦', char2: '文', text: '悦亲戚之情话', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '锐涵', char1: '锐', char2: '涵', text: '涵虚混太清', poem: '望洞庭湖', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '正清', char1: '正', char2: '清', text: '清风两袖朝天去', poem: '入京', source: '于谦《入京》' },
+    { chars: '锦博', char1: '锦', char2: '博', text: '博学之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '铭浩', char1: '铭', char2: '浩', text: '浩浩昊天', poem: '诗经', source: '《诗经·小雅·雨无正》' },
+    { chars: '玉涵', char1: '玉', char2: '涵', text: '玉在山而草木润', poem: '荀子', source: '荀子《劝学》' },
+    { chars: '瑞泽', char1: '瑞', char2: '泽', text: '瑞雪兆丰年', poem: '谚语', source: '民间谚语' }
+  ],
+  '金木': [
+    { chars: '铭楷', char1: '铭', char2: '楷', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '锦兰', char1: '锦', char2: '兰', text: '兰叶春葳蕤', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '钧松', char1: '钧', char2: '松', text: '岁寒知松柏', poem: '论语', source: '《论语·子罕》' },
+    { chars: '诗兰', char1: '诗', char2: '兰', text: '兰有秀兮菊有芳', poem: '秋风辞', source: '刘彻《秋风辞》' },
+    { chars: '玉林', char1: '玉', char2: '林', text: '深林人不知，明月来相照', poem: '竹里馆', source: '王维《竹里馆》' },
+    { chars: '诚君', char1: '诚', char2: '君', text: '诚者天之道也', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '承杰', char1: '承', char2: '杰', text: '生当作人杰', poem: '夏日绝句', source: '李清照《夏日绝句》' },
+    { chars: '铭若', char1: '铭', char2: '若', text: '若明若暗', poem: '老子', source: '《道德经》' },
+    { chars: '锦萱', char1: '锦', char2: '萱', text: '萱草生堂阶', poem: '游子吟', source: '孟郊《游子吟》' },
+    { chars: '悦兰', char1: '悦', char2: '兰', text: '兰叶春葳蕤', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '钦若', char1: '钦', char2: '若', text: '钦明文思安安', poem: '尚书', source: '《尚书·尧典》' },
+    { chars: '瑞松', char1: '瑞', char2: '松', text: '瑞气千条', poem: '洛神赋', source: '曹植《洛神赋》' },
+    { chars: '思若', char1: '思', char2: '若', text: '学而不思则罔', poem: '论语', source: '《论语·为政》' },
+    { chars: '玉梅', char1: '玉', char2: '梅', text: '梅须逊雪三分白', poem: '雪梅', source: '卢梅坡《雪梅》' },
+    { chars: '锋毅', char1: '锋', char2: '毅', text: '士不可以不弘毅', poem: '论语', source: '《论语·泰伯》' }
+  ],
+  '金火': [
+    { chars: '铭哲', char1: '铭', char2: '哲', text: '既明且哲，以保其身', poem: '诗经', source: '《诗经·大雅·烝民》' },
+    { chars: '锦晨', char1: '锦', char2: '晨', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '瑞德', char1: '瑞', char2: '德', text: '君子进德修业', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '诗晨', char1: '诗', char2: '晨', text: '诗者志之所之也', poem: '毛诗序', source: '《毛诗序》' },
+    { chars: '玉朗', char1: '玉', char2: '朗', text: '天朗气清，惠风和畅', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '悦晨', char1: '悦', char2: '晨', text: '悦亲戚之情话', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '铭煜', char1: '铭', char2: '煜', text: '日以煜乎昼', poem: '太玄', source: '《太玄·元告》' },
+    { chars: '诚明', char1: '诚', char2: '明', text: '诚则明矣，明则诚矣', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '钧昊', char1: '钧', char2: '昊', text: '昊天罔极', poem: '诗经', source: '《诗经·小雅·蓼莪》' },
+    { chars: '锦曦', char1: '锦', char2: '晨', text: '晨起动征铎', poem: '商山早行', source: '温庭筠《商山早行》' },
+    { chars: '睿明', char1: '睿', char2: '明', text: '睿哲维明', poem: '尚书', source: '《尚书·洪范》' },
+    { chars: '思明', char1: '思', char2: '明', text: '学而不思则罔', poem: '论语', source: '《论语·为政》' },
+    { chars: '善德', char1: '善', char2: '德', text: '大学之道在明明德', poem: '大学', source: '《大学》' },
+    { chars: '玉瑶', char1: '玉', char2: '瑶', text: '瑶台月下逢', poem: '清平调', source: '李白《清平调》' },
+    { chars: '锋朗', char1: '锋', char2: '朗', text: '天朗气清', poem: '兰亭集序', source: '王羲之《兰亭集序》' }
+  ],
+  '金土': [
+    { chars: '铭宇', char1: '铭', char2: '宇', text: '宇泰定者，发乎天光', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '锦安', char1: '锦', char2: '安', text: '安得广厦千万间', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '瑞轩', char1: '瑞', char2: '轩', text: '开轩面场圃', poem: '过故人庄', source: '孟浩然《过故人庄》' },
+    { chars: '玉辰', char1: '玉', char2: '辰', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' },
+    { chars: '诗怡', char1: '诗', char2: '怡', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '钦远', char1: '钦', char2: '远', text: '路漫漫其修远兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '承安', char1: '承', char2: '安', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '悦怡', char1: '悦', char2: '怡', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '铭峰', char1: '铭', char2: '峰', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '玉婉', char1: '玉', char2: '婉', text: '有美一人，婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '锦远', char1: '锦', char2: '远', text: '云中谁寄锦书来', poem: '一剪梅', source: '李清照《一剪梅》' },
+    { chars: '诚宇', char1: '诚', char2: '宇', text: '诚者天之道也', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '瑞安', char1: '瑞', char2: '安', text: '瑞雪兆丰年', poem: '谚语', source: '民间谚语' },
+    { chars: '诗婉', char1: '诗', char2: '婉', text: '婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '正宇', char1: '正', char2: '宇', text: '宇泰定者', poem: '庄子', source: '《庄子·庚桑楚》' }
+  ],
+  '火火': [
+    { chars: '煜朗', char1: '煜', char2: '朗', text: '日以煜乎昼', poem: '太玄', source: '《太玄·元告》' },
+    { chars: '哲德', char1: '哲', char2: '德', text: '既明且哲，以保其身', poem: '诗经', source: '《诗经·大雅·烝民》' },
+    { chars: '昊明', char1: '昊', char2: '明', text: '昊天罔极', poem: '诗经', source: '《诗经·小雅·蓼莪》' },
+    { chars: '晴晨', char1: '晴', char2: '晨', text: '晴空一鹤排云上', poem: '秋词', source: '刘禹锡《秋词》' },
+    { chars: '明德', char1: '明', char2: '德', text: '大学之道，在明明德', poem: '大学', source: '《大学》' },
+    { chars: '宁昕', char1: '宁', char2: '昕', text: '如日之升，如月之恒', poem: '诗经', source: '《诗经·小雅·天保》' },
+    { chars: '龙天', char1: '龙', char2: '天', text: '飞龙在天，利见大人', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '志达', char1: '志', char2: '达', text: '志当存高远', poem: '诫外生书', source: '诸葛亮《诫外生书》' },
+    { chars: '朗晨', char1: '朗', char2: '晨', text: '天朗气清', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '昊煜', char1: '昊', char2: '煜', text: '昊天罔极', poem: '诗经', source: '《诗经·小雅·蓼莪》' },
+    { chars: '晨光', char1: '晨', char2: '光', text: '晨光熹微', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '德明', char1: '德', char2: '明', text: '明明德于天下', poem: '大学', source: '《大学》' },
+    { chars: '旭尧', char1: '晨', char2: '昊', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '智明', char1: '智', char2: '明', text: '知人者智，自知者明', poem: '老子', source: '《道德经》' },
+    { chars: '宁晨', char1: '宁', char2: '晨', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' }
+  ],
+  '火水': [
+    { chars: '哲涵', char1: '哲', char2: '涵', text: '既明且哲', poem: '诗经', source: '《诗经·大雅·烝民》' },
+    { chars: '明朗', char1: '明', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '晨曦', char1: '晨', char2: '鸿', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '昊泽', char1: '昊', char2: '泽', text: '昊天罔极', poem: '诗经', source: '《诗经·小雅·蓼莪》' },
+    { chars: '晴涵', char1: '晴', char2: '涵', text: '晴空一鹤排云上', poem: '秋词', source: '刘禹锡《秋词》' },
+    { chars: '德泽', char1: '德', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '志博', char1: '志', char2: '博', text: '博学而笃志', poem: '论语', source: '《论语·子张》' },
+    { chars: '煜涵', char1: '煜', char2: '涵', text: '日以煜乎昼', poem: '太玄', source: '《太玄·元告》' },
+    { chars: '朗清', char1: '朗', char2: '清', text: '天朗气清', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '龙泽', char1: '龙', char2: '泽', text: '飞龙在天，利见大人', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '达博', char1: '达', char2: '博', text: '博学之，审问之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '晨博', char1: '晨', char2: '博', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '哲文', char1: '哲', char2: '文', text: '文质彬彬', poem: '论语', source: '《论语·雍也》' },
+    { chars: '德清', char1: '德', char2: '清', text: '清德流芳', poem: '后汉书', source: '《后汉书》' },
+    { chars: '志宏', char1: '志', char2: '宏', text: '志当存高远', poem: '诫外生书', source: '诸葛亮《诫外生书》' }
+  ],
+  '火木': [
+    { chars: '哲林', char1: '哲', char2: '林', text: '深林人不知', poem: '竹里馆', source: '王维《竹里馆》' },
+    { chars: '明若', char1: '明', char2: '若', text: '若明若暗', poem: '老子', source: '《道德经》' },
+    { chars: '晨兰', char1: '晨', char2: '兰', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '志杰', char1: '志', char2: '杰', text: '志当存高远', poem: '诫外生书', source: '诸葛亮《诫外生书》' },
+    { chars: '朗松', char1: '朗', char2: '松', text: '天朗气清', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '德嘉', char1: '德', char2: '嘉', text: '君子进德修业', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '宁谦', char1: '宁', char2: '谦', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '龙林', char1: '龙', char2: '林', text: '水不在深，有龙则灵', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '志毅', char1: '志', char2: '毅', text: '志当存高远', poem: '诫外生书', source: '诸葛亮《诫外生书》' },
+    { chars: '晨荷', char1: '晨', char2: '荷', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '哲毅', char1: '哲', char2: '毅', text: '士不可以不弘毅', poem: '论语', source: '《论语·泰伯》' },
+    { chars: '昊林', char1: '昊', char2: '林', text: '昊天罔极', poem: '诗经', source: '《诗经·小雅·蓼莪》' },
+    { chars: '达林', char1: '达', char2: '林', text: '达则兼济天下', poem: '孟子', source: '《孟子·尽心上》' },
+    { chars: '德君', char1: '德', char2: '君', text: '君子进德修业', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '志英', char1: '志', char2: '英', text: '志当存高远', poem: '诫外生书', source: '诸葛亮《诫外生书》' }
+  ],
+  '火金': [
+    { chars: '哲铭', char1: '哲', char2: '铭', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '明诚', char1: '明', char2: '诚', text: '诚则明矣，明则诚矣', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '晨悦', char1: '晨', char2: '悦', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '志信', char1: '志', char2: '信', text: '人而无信，不知其可', poem: '论语', source: '《论语·为政》' },
+    { chars: '朗玉', char1: '朗', char2: '玉', text: '玉在山而草木润', poem: '荀子', source: '荀子《劝学》' },
+    { chars: '德善', char1: '德', char2: '善', text: '大学之道在明明德在亲民在止于至善', poem: '大学', source: '《大学》' },
+    { chars: '宁信', char1: '宁', char2: '信', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '哲睿', char1: '哲', char2: '睿', text: '睿哲维明', poem: '尚书', source: '《尚书·洪范》' },
+    { chars: '明正', char1: '明', char2: '正', text: '大学之道在明明德', poem: '大学', source: '《大学》' },
+    { chars: '志承', char1: '志', char2: '承', text: '承前启后', poem: '大学', source: '《大学》' },
+    { chars: '晨锦', char1: '晨', char2: '锦', text: '晨光熹微', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '德锦', char1: '德', char2: '锦', text: '锦衣夜行', poem: '史记', source: '《史记·项羽本纪》' },
+    { chars: '朗瑞', char1: '朗', char2: '瑞', text: '瑞气千条', poem: '洛神赋', source: '曹植《洛神赋》' },
+    { chars: '志玉', char1: '志', char2: '玉', text: '玉不琢，不成器', poem: '礼记', source: '《礼记·学记》' },
+    { chars: '哲钦', char1: '哲', char2: '钦', text: '既明且哲', poem: '诗经', source: '《诗经·大雅·烝民》' }
+  ],
+  '火土': [
+    { chars: '哲宇', char1: '哲', char2: '宇', text: '宇泰定者', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '明远', char1: '明', char2: '远', text: '非淡泊无以明志', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '晨怡', char1: '晨', char2: '怡', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '志远', char1: '志', char2: '远', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '朗辰', char1: '朗', char2: '辰', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' },
+    { chars: '龙宇', char1: '龙', char2: '宇', text: '飞龙在天', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '德永', char1: '德', char2: '永', text: '道德传家，十代以上', poem: '颜氏家训', source: '《颜氏家训》' },
+    { chars: '宁安', char1: '宁', char2: '安', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '志辰', char1: '志', char2: '辰', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' },
+    { chars: '朗宇', char1: '朗', char2: '宇', text: '宇泰定者', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '昊辰', char1: '昊', char2: '辰', text: '日月星辰', poem: '尚书', source: '《尚书·洪范》' },
+    { chars: '德安', char1: '德', char2: '安', text: '君子进德修业', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '宁远', char1: '宁', char2: '远', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '志岩', char1: '志', char2: '岩', text: '志坚如磐石', poem: '后汉书', source: '《后汉书》' },
+    { chars: '晨岚', char1: '晨', char2: '岚', text: '山岚青翠', poem: '山中', source: '王维《终南山》' }
+  ],
+  '土土': [
+    { chars: '宇轩', char1: '宇', char2: '轩', text: '宇泰定者，发乎天光', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '辰安', char1: '辰', char2: '安', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' },
+    { chars: '远山', char1: '远', char2: '山', text: '路漫漫其修远兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '安怡', char1: '安', char2: '怡', text: '心旷神怡，宠辱偕忘', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '伟峰', char1: '伟', char2: '峰', text: '横看成岭侧成峰', poem: '题西林壁', source: '苏轼《题西林壁》' },
+    { chars: '婉怡', char1: '婉', char2: '怡', text: '有美一人，婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '岩峰', char1: '岩', char2: '峰', text: '岩岩若孤松之独秀', poem: '世说新语', source: '《世说新语》' },
+    { chars: '岚婉', char1: '岚', char2: '婉', text: '空翠湿人衣', poem: '山中', source: '王维《山中》' },
+    { chars: '安辰', char1: '安', char2: '辰', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '永轩', char1: '永', char2: '轩', text: '开轩面场圃', poem: '过故人庄', source: '孟浩然《过故人庄》' },
+    { chars: '宇辰', char1: '宇', char2: '辰', text: '日月星辰，运行不息', poem: '尚书', source: '《尚书·洪范》' },
+    { chars: '安远', char1: '安', char2: '远', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '峰岚', char1: '峰', char2: '岚', text: '山岚青翠', poem: '山中', source: '王维《终南山》' },
+    { chars: '怡婉', char1: '怡', char2: '婉', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '辰宇', char1: '辰', char2: '宇', text: '日月星辰', poem: '尚书', source: '《尚书·洪范》' }
+  ],
+  '土水': [
+    { chars: '宇泽', char1: '宇', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '轩涵', char1: '轩', char2: '涵', text: '涵虚混太清', poem: '望洞庭湖', source: '孟浩然《望洞庭湖赠张丞相》' },
+    { chars: '远博', char1: '远', char2: '博', text: '博学之，审问之', poem: '中庸', source: '《礼记·中庸》' },
+    { chars: '安文', char1: '安', char2: '文', text: '文质彬彬', poem: '论语', source: '《论语·雍也》' },
+    { chars: '永泽', char1: '永', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '辰涵', char1: '辰', char2: '涵', text: '江涵秋影雁初飞', poem: '九日齐山登高', source: '杜牧《九日齐山登高》' },
+    { chars: '婉涵', char1: '婉', char2: '涵', text: '婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '峰泽', char1: '峰', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '远文', char1: '远', char2: '文', text: '文章千古事', poem: '偶题', source: '杜甫《偶题》' },
+    { chars: '辰泽', char1: '辰', char2: '泽', text: '阳春布德泽', poem: '长歌行', source: '《长歌行》' },
+    { chars: '轩文', char1: '轩', char2: '文', text: '开轩面场圃', poem: '过故人庄', source: '孟浩然《过故人庄》' },
+    { chars: '安涵', char1: '安', char2: '涵', text: '安得广厦千万间', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '伟鸿', char1: '伟', char2: '鸿', text: '鸿鹄高飞', poem: '大风歌', source: '刘邦《大风歌》' },
+    { chars: '岩海', char1: '岩', char2: '海', text: '海纳百川', poem: '尚书', source: '《尚书·君陈》' },
+    { chars: '怡涵', char1: '怡', char2: '涵', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' }
+  ],
+  '土木': [
+    { chars: '宇林', char1: '宇', char2: '林', text: '深林人不知', poem: '竹里馆', source: '王维《竹里馆》' },
+    { chars: '轩松', char1: '轩', char2: '松', text: '开轩面场圃', poem: '过故人庄', source: '孟浩然《过故人庄》' },
+    { chars: '远君', char1: '远', char2: '君', text: '路漫漫其修远兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '安若', char1: '安', char2: '若', text: '安得广厦千万间', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '辰兰', char1: '辰', char2: '兰', text: '兰叶春葳蕤', poem: '感遇', source: '张九龄《感遇》' },
+    { chars: '婉兰', char1: '婉', char2: '兰', text: '婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' },
+    { chars: '岳林', char1: '岳', char2: '林', text: '五岳寻仙不辞远', poem: '庐山谣', source: '李白《庐山谣寄卢侍御虚舟》' },
+    { chars: '怡萱', char1: '怡', char2: '萱', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '辰萱', char1: '辰', char2: '萱', text: '萱草生堂阶', poem: '游子吟', source: '孟郊《游子吟》' },
+    { chars: '轩杰', char1: '轩', char2: '杰', text: '生当作人杰', poem: '夏日绝句', source: '李清照《夏日绝句》' },
+    { chars: '远松', char1: '远', char2: '松', text: '岁寒知松柏', poem: '论语', source: '《论语·子罕》' },
+    { chars: '安柳', char1: '安', char2: '柳', text: '杨柳岸晓风残月', poem: '雨霖铃', source: '柳永《雨霖铃》' },
+    { chars: '永林', char1: '永', char2: '林', text: '深林人不知', poem: '竹里馆', source: '王维《竹里馆》' },
+    { chars: '安君', char1: '安', char2: '君', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '辰若', char1: '辰', char2: '若', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' }
+  ],
+  '土金': [
+    { chars: '宇铭', char1: '宇', char2: '铭', text: '山不在高，有仙则名', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '轩锦', char1: '轩', char2: '锦', text: '云中谁寄锦书来', poem: '一剪梅', source: '李清照《一剪梅》' },
+    { chars: '远承', char1: '远', char2: '承', text: '路漫漫其修远兮', poem: '离骚', source: '屈原《离骚》' },
+    { chars: '安如', char1: '安', char2: '如', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '辰瑞', char1: '辰', char2: '瑞', text: '瑞雪兆丰年', poem: '谚语', source: '民间谚语' },
+    { chars: '婉诗', char1: '婉', char2: '诗', text: '诗者志之所之也', poem: '毛诗序', source: '《毛诗序》' },
+    { chars: '永信', char1: '永', char2: '信', text: '人而无信，不知其可', poem: '论语', source: '《论语·为政》' },
+    { chars: '安玉', char1: '安', char2: '玉', text: '玉在山而草木润', poem: '荀子', source: '荀子《劝学》' },
+    { chars: '怡心', char1: '怡', char2: '心', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '宇钧', char1: '宇', char2: '钧', text: '宇泰定者', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '岚玉', char1: '岚', char2: '玉', text: '玉在山而草木润', poem: '荀子', source: '荀子《劝学》' },
+    { chars: '辰悦', char1: '辰', char2: '悦', text: '悦亲戚之情话', poem: '归去来兮辞', source: '陶渊明《归去来兮辞》' },
+    { chars: '峰铭', char1: '峰', char2: '铭', text: '山不在高', poem: '陋室铭', source: '刘禹锡《陋室铭》' },
+    { chars: '安诚', char1: '安', char2: '诚', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '婉玉', char1: '婉', char2: '玉', text: '有美一人，婉如清扬', poem: '诗经', source: '《诗经·郑风·野有蔓草》' }
+  ],
+  '土火': [
+    { chars: '宇哲', char1: '宇', char2: '哲', text: '宇泰定者，发乎天光', poem: '庄子', source: '《庄子·庚桑楚》' },
+    { chars: '轩朗', char1: '轩', char2: '朗', text: '天朗气清', poem: '兰亭集序', source: '王羲之《兰亭集序》' },
+    { chars: '远志', char1: '远', char2: '志', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '安晨', char1: '安', char2: '晨', text: '风雨不动安如山', poem: '茅屋为秋风所破歌', source: '杜甫《茅屋为秋风所破歌》' },
+    { chars: '辰朗', char1: '辰', char2: '朗', text: '良辰美景奈何天', poem: '牡丹亭', source: '汤显祖《牡丹亭》' },
+    { chars: '婉晴', char1: '婉', char2: '晴', text: '道是无晴却有晴', poem: '竹枝词', source: '刘禹锡《竹枝词》' },
+    { chars: '怡宁', char1: '怡', char2: '宁', text: '心旷神怡', poem: '岳阳楼记', source: '范仲淹《岳阳楼记》' },
+    { chars: '宇晨', char1: '宇', char2: '晨', text: '晨兴理荒秽', poem: '归园田居', source: '陶渊明《归园田居》' },
+    { chars: '永明', char1: '永', char2: '明', text: '明德惟馨', poem: '尚书', source: '《尚书·君陈》' },
+    { chars: '安德', char1: '安', char2: '德', text: '君子进德修业', poem: '易经', source: '《易经·乾卦》' },
+    { chars: '辰德', char1: '辰', char2: '德', text: '大学之道在明明德', poem: '大学', source: '《大学》' },
+    { chars: '远明', char1: '远', char2: '明', text: '非淡泊无以明志', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '怡晴', char1: '怡', char2: '晴', text: '道是无晴却有晴', poem: '竹枝词', source: '刘禹锡《竹枝词》' },
+    { chars: '安宁', char1: '安', char2: '宁', text: '非宁静无以致远', poem: '诫子书', source: '诸葛亮《诫子书》' },
+    { chars: '宇达', char1: '宇', char2: '达', text: '宇泰定者', poem: '庄子', source: '《庄子·庚桑楚》' }
+  ]
 }
-
-export const charIndex = buildCharIndex()
