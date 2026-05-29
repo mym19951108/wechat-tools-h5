@@ -1,18 +1,12 @@
-// One-time script: generate poetry-map.js and names.js from chinese-poetry
+// Build poetry-map.js from local poetry JSON files
 // Usage: node scripts/build-poetry-db.js
-import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 
-const DATA_DIR = path.resolve('./.chinese-poetry-data')
+const SCRIPTS_DIR = path.resolve('./scripts')
 const OUTPUT_DIR = path.resolve('./src/data')
 
-// Characters that should never appear in names
-const BLOCKLIST = new Set(
-  '悲恨死伤残亡绝弃败衰落病痛苦怨恨仇辱耻废毁灭丧败凶邪恶毒灾祸咎耻丑劣殁殂夭折薨逝殒'.split('')
-)
-
-// Manual wuxing annotations for common naming chars
+// Wuxing annotations for common naming chars
 const MANUAL_WUXING = {
   '宇': '土', '泽': '水', '轩': '土', '辰': '土', '铭': '金', '睿': '金',
   '博': '水', '昊': '火', '哲': '火', '毅': '木', '霖': '水', '熙': '水',
@@ -27,7 +21,7 @@ const MANUAL_WUXING = {
   '嘉': '木', '永': '土', '乐': '火', '平': '水', '康': '木', '健': '木',
   '杰': '木', '豪': '水', '英': '木', '伟': '土', '浩': '水', '然': '金',
   '达': '火', '通': '火', '畅': '火', '和': '水', '祥': '金', '善': '金',
-  '美': '水', '良': '火', '真': '金', '诚': '金',
+  '美': '水', '良': '火', '真': '金', '诚': '金', '实': '金',
   '子': '水', '君': '木', '若': '木', '如': '金', '心': '金', '意': '土',
   '天': '火', '地': '土', '日': '火', '月': '木', '星': '火', '云': '水',
   '风': '水', '雨': '水', '露': '水', '霜': '水',
@@ -42,213 +36,181 @@ const MANUAL_WUXING = {
   '东': '木', '南': '火', '西': '金', '北': '水', '中': '土', '正': '金',
   '一': '水', '元': '木', '亨': '水', '利': '火', '贞': '火', '吉': '木',
   '世': '金', '代': '火', '承': '金', '继': '木', '启': '木', '开': '木',
-  '宏': '水', '大': '火', '光': '火', '辉': '火', '耀': '火', '焕': '火'
+  '宏': '水', '大': '火', '光': '火', '辉': '火', '耀': '火', '焕': '火',
+  '国': '木', '庆': '木', '盛': '金', '昌': '火', '兴': '水', '隆': '火',
+  '庆': '木', '丰': '火', '富': '水', '贵': '木', '福': '水', '寿': '金',
+  '延': '土', '长': '火', '茂': '木', '荣': '木', '芳': '木', '秀': '金',
+  '静': '金', '娴': '土', '淑': '金', '慧': '水', '敏': '水', '巧': '木',
+  '妙': '水', '韵': '土', '幽': '土', '淡': '水', '素': '金', '纯': '金',
+  '洁': '水', '白': '水', '丹': '火', '青': '金', '紫': '金', '翠': '金',
+  '思': '金', '念': '火', '怀': '水', '忆': '土', '望': '水', '盼': '水',
+  '雄': '水', '威': '土', '猛': '水', '刚': '金', '强': '木', '壮': '金',
+  '奇': '木', '特': '火', '异': '土', '卓': '火', '超': '金', '越': '土',
+  '万': '水', '千': '金', '百': '水', '九': '木', '三': '木', '十': '金',
+  '少': '金', '伯': '水', '仲': '火', '叔': '金', '季': '木',
+  '道': '火', '理': '火', '法': '水', '则': '金', '度': '木', '章': '火'
 }
 
+const BLOCKLIST = new Set(
+  '悲恨死伤残亡绝弃败衰落病痛苦怨恨仇辱耻废毁灭丧凶邪恶毒灾祸咎丑劣殁殂夭折薨逝殒鬼魅妖孽'.split('')
+)
 const WHITELIST = new Set(Object.keys(MANUAL_WUXING))
 
-function getWuxing(char) {
-  return MANUAL_WUXING[char] || null
-}
+function getWuxing(char) { return MANUAL_WUXING[char] || null }
 
 function extractCombos(line) {
   const chars = [...line].filter(c => /^[一-鿿]$/.test(c))
   const combos = []
   const seen = new Set()
-
   for (let i = 0; i < chars.length - 1; i++) {
     const adj = chars[i] + chars[i + 1]
-    if (!seen.has(adj)) { seen.add(adj); combos.push({ text: adj, c1: chars[i], c2: chars[i + 1], type: 'adjacent' }) }
+    if (!seen.has(adj)) { seen.add(adj); combos.push({ chars: adj, c1: chars[i], c2: chars[i + 1], line }) }
     if (i < chars.length - 2) {
       const skip = chars[i] + chars[i + 2]
-      if (!seen.has(skip)) { seen.add(skip); combos.push({ text: skip, c1: chars[i], c2: chars[i + 2], type: 'skip1' }) }
+      if (!seen.has(skip)) { seen.add(skip); combos.push({ chars: skip, c1: chars[i], c2: chars[i + 2], line }) }
     }
   }
   if (chars.length >= 2) {
     const fl = chars[0] + chars[chars.length - 1]
-    if (!seen.has(fl)) { seen.add(fl); combos.push({ text: fl, c1: chars[0], c2: chars[chars.length - 1], type: 'firstLast' }) }
+    if (!seen.has(fl)) { seen.add(fl); combos.push({ chars: fl, c1: chars[0], c2: chars[chars.length - 1], line }) }
   }
   return combos
 }
 
-function isValidName(c1, c2) {
+function isValid(c1, c2) {
   if (!WHITELIST.has(c1) || !WHITELIST.has(c2)) return false
   if (BLOCKLIST.has(c1) || BLOCKLIST.has(c2)) return false
   if (c1 === c2) return false
+  const w1 = getWuxing(c1), w2 = getWuxing(c2)
+  if (!w1 || !w2) return false
   return true
 }
 
-function processPoem(poem) {
-  const results = []
-  const lines = poem.paragraphs || poem.content || []
-  const poemText = Array.isArray(lines) ? lines : String(lines).split(/[，。！？、；：\n]/)
-  const title = poem.title || '佚名'
-  const author = poem.author || '佚名'
-
-  for (const line of poemText) {
-    if (!line || line.length < 2) continue
-    const combos = extractCombos(line)
-    for (const combo of combos) {
-      if (!isValidName(combo.c1, combo.c2)) continue
-      const w1 = getWuxing(combo.c1)
-      const w2 = getWuxing(combo.c2)
-      if (!w1 || !w2) continue
-      results.push({
-        chars: combo.text,
-        char1: combo.c1,
-        char2: combo.c2,
-        wuxing: w1 + w2,
-        text: line.trim(),
-        poem: title,
-        source: `${author}《${title}》`,
-        type: combo.type
-      })
-    }
-  }
-  return results
-}
-
-function scanDirectory(dir, label) {
-  const results = []
-  if (!fs.existsSync(dir)) { console.log(`  skip ${label}: not found`); return results }
-  const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'))
-  console.log(`  scanning ${label}: ${files.length} files`)
-  for (const file of files) {
-    try {
-      const data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8'))
-      const items = Array.isArray(data) ? data : [data]
-      for (const item of items) {
-        results.push(...processPoem(item))
-      }
-    } catch (e) {
-      // skip malformed files
-    }
-  }
-  return results
-}
-
-function cloneRepo() {
-  if (fs.existsSync(DATA_DIR)) {
-    console.log('Removing old data...')
-    fs.rmSync(DATA_DIR, { recursive: true, force: true })
-  }
-  console.log('Sparse cloning chinese-poetry (only shijing/chuci/json/ci)...')
-  execSync(
-    `git clone --depth 1 --filter=blob:none --sparse https://github.com/chinese-poetry/chinese-poetry.git "${DATA_DIR}"`,
-    { stdio: 'inherit' }
-  )
-  execSync('git sparse-checkout set shijing chuci json ci', { cwd: DATA_DIR, stdio: 'inherit' })
-}
-
-function buildNameChars(allNames) {
-  const chars = {}
-  for (const name of allNames) {
-    for (const ch of [name.char1, name.char2]) {
-      if (!chars[ch]) {
-        const wx = getWuxing(ch) || '水'
-        chars[ch] = { char: ch, wuxing: wx, strokes: 8, score: 85 }
+function processPoems(entries, sourceName, getLines) {
+  const all = []
+  for (const entry of entries) {
+    const lines = getLines(entry)
+    const title = entry.title || '佚名'
+    const author = entry.author || '佚名'
+    for (const line of lines) {
+      if (!line || line.length < 2) continue
+      const combos = extractCombos(line)
+      for (const c of combos) {
+        if (!isValid(c.c1, c.c2)) continue
+        all.push({
+          chars: c.chars,
+          char1: c.c1, char2: c.c2,
+          wuxing: getWuxing(c.c1) + getWuxing(c.c2),
+          text: line.trim(),
+          poem: title,
+          source: `${author}《${title}》`
+        })
       }
     }
   }
-  return Object.values(chars)
-}
-
-function groupByWuxing(allNames) {
-  const groups = {}
-  for (const name of allNames) {
-    const key = name.wuxing
-    if (!groups[key]) groups[key] = []
-    groups[key].push({
-      chars: name.chars,
-      char1: name.char1,
-      char2: name.char2,
-      text: name.text,
-      poem: name.poem,
-      source: name.source
-    })
-  }
-  return groups
+  console.log(`  ${sourceName}: ${entries.length} poems → ${all.length} name combos`)
+  return all
 }
 
 function main() {
-  console.log('=== Building poetry name database ===\n')
-  cloneRepo()
-  const allNames = []
-  console.log('\nScanning poetry sources...')
-  allNames.push(...scanDirectory(path.join(DATA_DIR, 'shijing'), '诗经'))
-  allNames.push(...scanDirectory(path.join(DATA_DIR, 'chuci'), '楚辞'))
-  allNames.push(...scanDirectory(path.join(DATA_DIR, 'json'), '唐诗'))
-  const songciPaths = ['songci', 'ci', 'song']
-  for (const p of songciPaths) {
-    const sp = path.join(DATA_DIR, p)
-    if (fs.existsSync(sp)) allNames.push(...scanDirectory(sp, p))
-  }
+  console.log('=== Building poetry name database from local JSON ===\n')
+
+  const allResults = []
+
+  // 诗经
+  const sj = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, '诗经.json'), 'utf8'))
+  allResults.push(...processPoems(sj, '诗经', e => e.content || []))
+
+  // 楚辞
+  const cc = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, '楚辞.json'), 'utf8'))
+  allResults.push(...processPoems(cc, '楚辞', e => e.content || []))
+
+  // 唐诗三百首
+  const ts = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, '唐诗三百首.json'), 'utf8'))
+  allResults.push(...processPoems(ts, '唐诗', e => e.paragraphs || []))
+
+  // 宋词三百首
+  const sc = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, '宋词三百首.json'), 'utf8'))
+  allResults.push(...processPoems(sc, '宋词', e => e.paragraphs || []))
+
+  // Deduplicate by chars
   const seen = new Set()
   const unique = []
-  for (const n of allNames) {
-    const key = n.chars + '|' + n.poem
+  for (const r of allResults) {
+    const key = r.chars + '|' + r.poem
     if (seen.has(key)) continue
     seen.add(key)
-    unique.push(n)
+    unique.push(r)
   }
   console.log(`\nTotal unique name pairs: ${unique.length}`)
-  const groups = groupByWuxing(unique)
-  console.log('Wuxing groups:', Object.keys(groups).length)
+
+  // Group by wuxing
+  const groups = {}
+  for (const r of unique) {
+    const key = r.wuxing
+    if (!groups[key]) groups[key] = []
+    groups[key].push({
+      chars: r.chars, char1: r.char1, char2: r.char2,
+      text: r.text, poem: r.poem, source: r.source
+    })
+  }
+
+  console.log(`Wuxing groups: ${Object.keys(groups).length}`)
   for (const [k, v] of Object.entries(groups)) {
     console.log(`  ${k}: ${v.length} names`)
   }
 
-  // Build char pool with gender heuristic
-  const allChars = buildNameChars(unique)
-  const girlOnly = new Set('婉妍萱琪瑶诗雅晴琳怡彤蔓颖雪悦璇昕'.split(''))
-  const boyOnly = new Set('宇轩辰铭睿博昊哲毅霖煜航瑞璟谦朗楷泓刚强勇伟杰豪'.split(''))
-  const neutralOnly = new Set('安文晨宁愿一永恒平和乐仁义礼智信善美真诚子君若如'.split(''))
-
-  const finalBoy = []
-  const finalGirl = []
-  const finalNeutral = []
-  const used = new Set()
-
-  for (const c of allChars) {
-    if (used.has(c.char)) continue
-    if (neutralOnly.has(c.char)) {
-      finalNeutral.push(c); used.add(c.char)
-    } else if (girlOnly.has(c.char)) {
-      finalGirl.push(c); used.add(c.char)
-    } else if (boyOnly.has(c.char)) {
-      finalBoy.push(c); used.add(c.char)
+  // Collect all unique chars
+  const uniqueCharsMap = {}
+  for (const r of unique) {
+    for (const ch of [r.char1, r.char2]) {
+      if (!uniqueCharsMap[ch]) {
+        uniqueCharsMap[ch] = { char: ch, wuxing: getWuxing(ch), strokes: 8, score: 85 }
+      }
     }
   }
-  // Rest to neutral
+  const allChars = Object.values(uniqueCharsMap)
+  console.log(`Unique name chars: ${allChars.length}`)
+
+  // Gender split (heuristic)
+  const girlSet = new Set('婉妍萱琪瑶诗雅晴琳怡彤蔓颖雪悦璇昕娴淑慧妙韵翠丹凤燕莲荷梅兰桂菊柳露霜'.split(''))
+  const boySet = new Set('宇轩辰铭睿博昊哲毅霖煜航瑞璟谦朗楷泓刚强勇伟杰豪龙鹏鸿钧钦锋锐'.split(''))
+  const neutralSet = new Set('安文晨宁愿一永恒平和乐仁义礼智信善美真诚子君若如'.split(''))
+
+  const boy = [], girl = [], neutral = []
+  const used = new Set()
   for (const c of allChars) {
-    if (!used.has(c.char)) { finalNeutral.push(c); used.add(c.char) }
+    if (used.has(c.char)) continue
+    if (neutralSet.has(c.char)) { neutral.push(c); used.add(c.char) }
+    else if (girlSet.has(c.char)) { girl.push(c); used.add(c.char) }
+    else if (boySet.has(c.char)) { boy.push(c); used.add(c.char) }
+  }
+  for (const c of allChars) {
+    if (!used.has(c.char)) { neutral.push(c); used.add(c.char) }
   }
 
-  console.log(`\nChars: boy=${finalBoy.length} girl=${finalGirl.length} neutral=${finalNeutral.length}`)
+  console.log(`Chars: boy=${boy.length} girl=${girl.length} neutral=${neutral.length}`)
 
-  // Build output
-  const poetryContent = [
-    '// Auto-generated by scripts/build-poetry-db.js',
-    `// Generated ${new Date().toISOString()}`,
-    'export const wuxingPoetryNames = ' + JSON.stringify(groups, null, 2),
-    ''
-  ].join('\n')
+  // Write outputs
+  const poetryContent = `// Generated by scripts/build-poetry-db.js from local poetry JSON
+// Sources: 诗经(305) 楚辞(65) 唐诗三百首(366) 宋词三百首(280)
+// Total: ${unique.length} unique name pairs, ${allChars.length} unique chars
+export const wuxingPoetryNames = ${JSON.stringify(groups, null, 2)}
+`
 
-  const namesContent = [
-    '// Auto-generated by scripts/build-poetry-db.js',
-    `// Generated ${new Date().toISOString()}`,
-    'export const nameChars = {',
-    '  boy: ' + JSON.stringify(finalBoy, null, 2) + ',',
-    '  girl: ' + JSON.stringify(finalGirl, null, 2) + ',',
-    '  neutral: ' + JSON.stringify(finalNeutral, null, 2),
-    '}',
-    ''
-  ].join('\n')
-
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true })
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'poetry-map.js'), poetryContent)
+  const pPath = path.join(OUTPUT_DIR, 'poetry-map.js')
+  fs.writeFileSync(pPath, poetryContent)
   console.log(`\nWritten: src/data/poetry-map.js (${(poetryContent.length / 1024).toFixed(1)} KB)`)
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'names.js'), namesContent)
+
+  const namesContent = `// Generated by scripts/build-poetry-db.js from local poetry JSON
+export const nameChars = {
+  boy: ${JSON.stringify(boy, null, 2)},
+  girl: ${JSON.stringify(girl, null, 2)},
+  neutral: ${JSON.stringify(neutral, null, 2)}
+}
+`
+  const nPath = path.join(OUTPUT_DIR, 'names.js')
+  fs.writeFileSync(nPath, namesContent)
   console.log(`Written: src/data/names.js (${(namesContent.length / 1024).toFixed(1)} KB)`)
   console.log('\n=== Done ===')
 }
