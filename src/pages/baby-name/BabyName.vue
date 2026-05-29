@@ -73,12 +73,14 @@
         </button>
       </div>
 
-      <!-- Staged Loading -->
-      <div v-if="baziLoading" class="loading-area">
-        <div class="loading-steps">
-          <div v-for="(step, idx) in baziSteps" :key="idx" class="step-row" :class="{ done: idx < baziCurrentStep, active: idx === baziCurrentStep }">
-            <span class="step-icon">{{ idx < baziCurrentStep ? '✓' : idx === baziCurrentStep ? '→' : '○' }}</span>
-            <span class="step-text">{{ step }}</span>
+      <!-- Staged Loading Overlay -->
+      <div v-if="baziLoading" class="loading-overlay">
+        <div class="loading-card">
+          <div class="loading-steps">
+            <div v-for="(step, idx) in baziSteps" :key="idx" class="step-row" :class="{ done: idx < baziCurrentStep, active: idx === baziCurrentStep }">
+              <span class="step-icon">{{ idx < baziCurrentStep ? '✓' : idx === baziCurrentStep ? '→' : '○' }}</span>
+              <span class="step-text">{{ step }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -259,12 +261,13 @@ function highlightChars(text, char1, char2) {
 .generate-btn { padding: 0.75rem; background: #07c160; color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
 .generate-btn:disabled { background: #ccc; cursor: not-allowed; }
 
-.loading-area { padding: 1.5rem 2rem; }
-.loading-steps { display: flex; flex-direction: column; gap: 0.75rem; }
-.step-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: #bbb; }
+.loading-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: center; justify-content: center; }
+.loading-card { background: #fff; border-radius: 12px; padding: 2rem 2.5rem; min-width: 260px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+.loading-steps { display: flex; flex-direction: column; gap: 1rem; }
+.step-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; color: #ccc; transition: color 0.3s; }
 .step-row.active { color: #333; font-weight: 600; }
-.step-row.done { color: #07c160; }
-.step-icon { width: 1.5rem; text-align: center; }
+.step-row.done { color: #07c160; font-weight: 500; }
+.step-icon { width: 1.5rem; text-align: center; font-weight: 700; }
 
 .results-area { padding: 0 1rem 1rem; }
 .section-title, .results-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; }
