@@ -14,26 +14,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "宇",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "龙",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "轩",
     "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "钧",
-    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -50,12 +32,6 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "哲",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "刚",
     "wuxing": "金",
     "strokes": 8,
@@ -68,14 +44,20 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "勇",
+    "char": "强",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "宇",
     "wuxing": "土",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "强",
-    "wuxing": "木",
+    "char": "钧",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -98,14 +80,20 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "朗",
+    "char": "龙",
     "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "航",
-    "wuxing": "水",
+    "char": "哲",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "朗",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -118,24 +106,6 @@ export const nameChars = {
 ],
   girl: [
   {
-    "char": "淑",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "梅",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "燕",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "露",
     "wuxing": "水",
     "strokes": 8,
@@ -144,6 +114,12 @@ export const nameChars = {
   {
     "char": "雪",
     "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "燕",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -160,44 +136,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "霜",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "丹",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "诗",
+    "char": "淑",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "雅",
-    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
   {
     "char": "颖",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "瑶",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "凤",
-    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
@@ -214,7 +160,37 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "瑶",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "梅",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "霜",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "桂",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "慧",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "雅",
     "wuxing": "木",
     "strokes": 8,
     "score": 85
@@ -226,20 +202,20 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "慧",
+    "char": "凤",
     "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "悦",
-    "wuxing": "金",
+    "char": "丹",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "蔓",
-    "wuxing": "木",
+    "char": "晴",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -256,20 +232,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "晴",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "妙",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "彤",
     "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "蔓",
+    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
@@ -282,6 +252,18 @@ export const nameChars = {
   {
     "char": "莲",
     "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "诗",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "妙",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   }
@@ -300,12 +282,6 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "乐",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "永",
     "wuxing": "土",
     "strokes": 8,
@@ -313,24 +289,6 @@ export const nameChars = {
   },
   {
     "char": "如",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "平",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "美",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "信",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
@@ -348,26 +306,20 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "仁",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "宁",
     "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "安",
-    "wuxing": "土",
+    "char": "美",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "文",
-    "wuxing": "水",
+    "char": "乐",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -390,13 +342,49 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "安",
+    "wuxing": "土",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "信",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "平",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "若",
     "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
   {
+    "char": "文",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "诚",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "真",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "仁",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
@@ -408,44 +396,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "真",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "智",
     "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "钟",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "怀",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "福",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "华",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "实",
-    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -462,24 +420,6 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "思",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "江",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "南",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "则",
     "wuxing": "金",
     "strokes": 8,
@@ -492,8 +432,20 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "南",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "山",
     "wuxing": "土",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "实",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -504,32 +456,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "星",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "春",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "吉",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "白",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "纯",
-    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -540,20 +468,20 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "石",
-    "wuxing": "土",
+    "char": "华",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "少",
-    "wuxing": "金",
+    "char": "雨",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "静",
-    "wuxing": "金",
+    "char": "仲",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -570,48 +498,6 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "风",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "雨",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "望",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "东",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "仲",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "雄",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "道",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "云",
     "wuxing": "水",
     "strokes": 8,
@@ -620,42 +506,6 @@ export const nameChars = {
   {
     "char": "远",
     "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "百",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "叔",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "伯",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "万",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "西",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "泉",
-    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
@@ -672,8 +522,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "异",
-    "wuxing": "土",
+    "char": "风",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "思",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -684,32 +540,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "然",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "清",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "千",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "朝",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "大",
-    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -726,32 +558,20 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "星",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "金",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "盼",
+    "char": "伯",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "良",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "德",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "夕",
-    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -762,8 +582,20 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "异",
+    "wuxing": "土",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "国",
     "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "叔",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -786,32 +618,20 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "丰",
+    "char": "清",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "百",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "大",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "昌",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "光",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "茂",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "度",
-    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
@@ -822,20 +642,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "夏",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "冬",
+    "char": "白",
     "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "畅",
-    "wuxing": "火",
+    "char": "石",
+    "wuxing": "土",
     "strokes": 8,
     "score": 85
   },
@@ -846,13 +660,13 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "泽",
-    "wuxing": "水",
+    "char": "夏",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "正",
+    "char": "朝",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
@@ -882,7 +696,25 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "万",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "寿",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "东",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "西",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
@@ -906,14 +738,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "承",
-    "wuxing": "金",
+    "char": "德",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "章",
-    "wuxing": "火",
+    "char": "福",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
@@ -924,13 +756,13 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "辉",
-    "wuxing": "火",
+    "char": "吉",
+    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "鹤",
+    "char": "泽",
     "wuxing": "水",
     "strokes": 8,
     "score": 85
@@ -942,8 +774,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "祥",
-    "wuxing": "金",
+    "char": "茂",
+    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
@@ -954,8 +786,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "特",
-    "wuxing": "火",
+    "char": "正",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "然",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -966,14 +804,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "威",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "巧",
-    "wuxing": "木",
+    "char": "夕",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -984,14 +816,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "长",
-    "wuxing": "火",
+    "char": "树",
+    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "树",
-    "wuxing": "木",
+    "char": "道",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -1002,14 +834,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "理",
-    "wuxing": "火",
+    "char": "冬",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "季",
-    "wuxing": "木",
+    "char": "钟",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -1020,19 +852,31 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "长",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "达",
     "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "利",
-    "wuxing": "火",
+    "char": "静",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "岳",
+    "char": "泉",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "度",
     "wuxing": "木",
     "strokes": 8,
     "score": 85
@@ -1044,20 +888,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "越",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "熙",
+    "char": "江",
     "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "继",
-    "wuxing": "木",
+    "char": "光",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -1068,8 +906,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "代",
-    "wuxing": "火",
+    "char": "纯",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "熙",
+    "wuxing": "水",
     "strokes": 8,
     "score": 85
   },
@@ -1080,19 +924,37 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "延",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "荣",
     "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
   {
+    "char": "丰",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "隆",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "望",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "少",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "良",
     "wuxing": "火",
     "strokes": 8,
     "score": 85
@@ -1110,20 +972,56 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "紫",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "超",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
   {
+    "char": "代",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "岳",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "季",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "巧",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "理",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "昌",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "地",
     "wuxing": "土",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "承",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -1146,8 +1044,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "盛",
-    "wuxing": "金",
+    "char": "章",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -1158,20 +1056,26 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "奇",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "壮",
-    "wuxing": "金",
+    "char": "延",
+    "wuxing": "土",
     "strokes": 8,
     "score": 85
   },
   {
     "char": "洁",
     "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "奇",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "盛",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -1188,8 +1092,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "猛",
-    "wuxing": "水",
+    "char": "利",
+    "wuxing": "火",
     "strokes": 8,
     "score": 85
   },
@@ -1200,20 +1104,26 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "岭",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "庆",
     "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "耀",
-    "wuxing": "火",
+    "char": "继",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "越",
+    "wuxing": "土",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "紫",
+    "wuxing": "金",
     "strokes": 8,
     "score": 85
   },
@@ -1230,13 +1140,31 @@ export const nameChars = {
     "score": 85
   },
   {
+    "char": "湖",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
     "char": "峰",
     "wuxing": "土",
     "strokes": 8,
     "score": 85
   },
   {
-    "char": "湖",
+    "char": "雄",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "耀",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "淡",
     "wuxing": "水",
     "strokes": 8,
     "score": 85
@@ -1248,8 +1176,8 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "淡",
-    "wuxing": "水",
+    "char": "健",
+    "wuxing": "木",
     "strokes": 8,
     "score": 85
   },
@@ -1260,7 +1188,7 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "锦",
+    "char": "壮",
     "wuxing": "金",
     "strokes": 8,
     "score": 85
@@ -1272,8 +1200,14 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "健",
-    "wuxing": "木",
+    "char": "锦",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 85
+  },
+  {
+    "char": "岭",
+    "wuxing": "土",
     "strokes": 8,
     "score": 85
   }

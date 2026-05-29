@@ -2,9 +2,17 @@
 // Usage: node scripts/build-poetry-db.js
 import fs from 'fs'
 import path from 'path'
+import { cut } from 'jieba-wasm'
 
 const SCRIPTS_DIR = path.resolve('./scripts')
 const OUTPUT_DIR = path.resolve('./src/data')
+
+// Split by Chinese punctuation to avoid cross-punctuation extractions
+const PUNCT_REGEX = /[，。！？、；：\s\n\r]+/g
+
+function splitSegments(line) {
+  return line.split(PUNCT_REGEX).filter(s => s.length >= 2)
+}
 
 // Wuxing annotations for common naming chars
 const MANUAL_WUXING = {
@@ -58,22 +66,35 @@ const WHITELIST = new Set(Object.keys(MANUAL_WUXING))
 
 function getWuxing(char) { return MANUAL_WUXING[char] || null }
 
+// Extract valid Chinese 2-char name pairs using jieba word segmentation
 function extractCombos(line) {
-  const chars = [...line].filter(c => /^[一-鿿]$/.test(c))
   const combos = []
   const seen = new Set()
-  for (let i = 0; i < chars.length - 1; i++) {
-    const adj = chars[i] + chars[i + 1]
-    if (!seen.has(adj)) { seen.add(adj); combos.push({ chars: adj, c1: chars[i], c2: chars[i + 1], line }) }
-    if (i < chars.length - 2) {
-      const skip = chars[i] + chars[i + 2]
-      if (!seen.has(skip)) { seen.add(skip); combos.push({ chars: skip, c1: chars[i], c2: chars[i + 2], line }) }
+  const segments = splitSegments(line)
+
+  for (const seg of segments) {
+    // Also try extracting adjacent pairs from the raw segment (catches poetic patterns jieba misses)
+    const chars = [...seg].filter(c => /^[一-鿿]$/.test(c))
+    if (chars.length >= 2) {
+      // Adjacent pairs (primary pattern)
+      for (let i = 0; i < chars.length - 1; i++) {
+        const pair = chars[i] + chars[i + 1]
+        if (!seen.has(pair)) { seen.add(pair); combos.push({ chars: pair, c1: chars[i], c2: chars[i + 1], text: seg }) }
+      }
+    }
+
+    // Jieba word-level extraction (validates against known vocabulary)
+    const words = cut(seg)
+    const word2Chars = words.filter(w => w.length === 2)
+    for (const word of word2Chars) {
+      const key = word
+      if (!seen.has(key)) {
+        seen.add(key)
+        combos.push({ chars: word, c1: word[0], c2: word[1], text: seg })
+      }
     }
   }
-  if (chars.length >= 2) {
-    const fl = chars[0] + chars[chars.length - 1]
-    if (!seen.has(fl)) { seen.add(fl); combos.push({ chars: fl, c1: chars[0], c2: chars[chars.length - 1], line }) }
-  }
+
   return combos
 }
 
@@ -101,7 +122,7 @@ function processPoems(entries, sourceName, getLines) {
           chars: c.chars,
           char1: c.c1, char2: c.c2,
           wuxing: getWuxing(c.c1) + getWuxing(c.c2),
-          text: line.trim(),
+          text: c.text || seg,
           poem: title,
           source: `${author}《${title}》`
         })
