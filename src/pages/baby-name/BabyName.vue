@@ -169,7 +169,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, nextTick } from 'vue'
 import ToolHeader from '../../shared/ToolHeader.vue'
 import FollowGuide from '../../shared/FollowGuide.vue'
 import AdSlot from '../../shared/AdSlot.vue'
@@ -214,6 +214,7 @@ function doGenerate() {
 
 async function doBaziAnalyze() {
   baziLoading.value = true
+  await nextTick()
   baziResult.value = null
   baziNames.value = []
 
