@@ -64,6 +64,8 @@ const tools = [
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
 }
 .tool-card-icon {
   font-size: 2rem;

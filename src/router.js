@@ -1,18 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './pages/Home.vue'
-import BabyName from './pages/baby-name/BabyName.vue'
-import EnglishName from './pages/english-name/EnglishName.vue'
-import Nickname from './pages/nickname/Nickname.vue'
-import Mortgage from './pages/mortgage/Mortgage.vue'
-import DateCalc from './pages/date-calc/DateCalc.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/baby-name', component: BabyName },
-  { path: '/english-name', component: EnglishName },
-  { path: '/nickname', component: Nickname },
-  { path: '/mortgage', component: Mortgage },
-  { path: '/date-calc', component: DateCalc }
+  { path: '/baby-name', component: () => import('./pages/baby-name/BabyName.vue') },
+  { path: '/english-name', component: () => import('./pages/english-name/EnglishName.vue') },
+  { path: '/nickname', component: () => import('./pages/nickname/Nickname.vue') },
+  { path: '/mortgage', component: () => import('./pages/mortgage/Mortgage.vue') },
+  { path: '/date-calc', component: () => import('./pages/date-calc/DateCalc.vue') },
+  { path: '/:pathMatch(.*)', redirect: '/' }
 ]
 
 export default createRouter({
