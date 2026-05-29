@@ -10,7 +10,8 @@ function shuffle(arr) {
 }
 
 export function generateNames({ surname, gender }) {
-  if (!surname || surname.trim() === '') return []
+  const s = (surname || '').trim()
+  if (!s) return []
 
   let pool
   if (gender === 'boy') {
@@ -35,7 +36,7 @@ export function generateNames({ surname, gender }) {
       const score = Math.min(100, avgScore + soundBonus)
 
       results.push({
-        fullName: surname + c1.char + c2.char,
+        fullName: s + c1.char + c2.char,
         char1: c1.char,
         char2: c2.char,
         meaning: `${c1.meaning}；${c2.meaning}`,

@@ -16,7 +16,7 @@
           <button type="button" :class="['gender-btn', { active: gender === 'any' }]" @click="gender = 'any'">不限</button>
         </div>
       </div>
-      <button class="generate-btn" @click="doGenerate" :disabled="!surname">
+      <button class="generate-btn" @click="doGenerate" :disabled="!surname.trim()">
         生成名字
       </button>
     </div>
