@@ -1,5 +1,5 @@
 <template>
-  <div>英文名生成</div>
+  <div>EnglishName Placeholder</div>
 </template>
 <script setup>
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>房贷计算</div>
+  <div>Mortgage Placeholder</div>
 </template>
 <script setup>
 </script>

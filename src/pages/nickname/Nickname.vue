@@ -1,5 +1,5 @@
 <template>
-  <div>网名生成</div>
+  <div>Nickname Placeholder</div>
 </template>
 <script setup>
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>日期计算</div>
+  <div>DateCalc Placeholder</div>
 </template>
 <script setup>
 </script>

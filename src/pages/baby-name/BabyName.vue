@@ -1,5 +1,5 @@
 <template>
-  <div>宝宝取名</div>
+  <div>BabyName Placeholder</div>
 </template>
 <script setup>
 </script>
