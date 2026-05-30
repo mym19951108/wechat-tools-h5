@@ -1,0 +1,877 @@
+{
+  "王": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "李": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 3
+  },
+  "张": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "刘": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "陈": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "杨": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "黄": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "赵": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "周": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "吴": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "徐": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "孙": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "马": {
+    "strokes": 3,
+    "wuxing": "火",
+    "tone": 3
+  },
+  "胡": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "朱": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "郭": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "何": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "高": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "林": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "郑": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "罗": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "梁": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "谢": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 4
+  },
+  "宋": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "唐": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "许": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "韩": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "冯": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "邓": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 4
+  },
+  "曹": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "彭": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "曾": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "肖": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "田": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "董": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 3
+  },
+  "潘": {
+    "strokes": 15,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "袁": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "蔡": {
+    "strokes": 14,
+    "wuxing": "火",
+    "tone": 4
+  },
+  "蒋": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 3
+  },
+  "余": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "于": {
+    "strokes": 3,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "杜": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "叶": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 4
+  },
+  "程": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "苏": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "魏": {
+    "strokes": 17,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "吕": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "丁": {
+    "strokes": 2,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "任": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 4
+  },
+  "沈": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 3
+  },
+  "姚": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "卢": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "姜": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "崔": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "钟": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "谭": {
+    "strokes": 14,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "陆": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "汪": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "范": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "金": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "石": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "廖": {
+    "strokes": 14,
+    "wuxing": "火",
+    "tone": 4
+  },
+  "贾": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 3
+  },
+  "夏": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "韦": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "付": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 4
+  },
+  "方": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 1
+  },
+  "白": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "邹": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "孟": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "熊": {
+    "strokes": 14,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "秦": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "邱": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "江": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "尹": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 3
+  },
+  "薛": {
+    "strokes": 16,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "阎": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "段": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "雷": {
+    "strokes": 13,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "侯": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "龙": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "史": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "陶": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "黎": {
+    "strokes": 15,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "贺": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "顾": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "毛": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "郝": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 3
+  },
+  "龚": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "邵": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "万": {
+    "strokes": 3,
+    "wuxing": "火",
+    "tone": 4
+  },
+  "钱": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "严": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "覃": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "武": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 3
+  },
+  "戴": {
+    "strokes": 17,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "莫": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "孔": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 3
+  },
+  "向": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 4
+  },
+  "汤": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "温": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "康": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "施": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "文": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "牛": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "樊": {
+    "strokes": 15,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "葛": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "邢": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "安": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "齐": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "易": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "乔": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "伍": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "庞": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "颜": {
+    "strokes": 15,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "倪": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "庄": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "聂": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "章": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "鲁": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 3
+  },
+  "岳": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "翟": {
+    "strokes": 14,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "殷": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "詹": {
+    "strokes": 13,
+    "wuxing": "火",
+    "tone": 1
+  },
+  "申": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "欧": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "耿": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 3
+  },
+  "关": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "兰": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "焦": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "俞": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "左": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "柳": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 3
+  },
+  "甘": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "祝": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "包": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 1
+  },
+  "宁": {
+    "strokes": 5,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "尚": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "符": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "阮": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "华": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "梅": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "滕": {
+    "strokes": 15,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "管": {
+    "strokes": 14,
+    "wuxing": "火",
+    "tone": 3
+  },
+  "洪": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "翁": {
+    "strokes": 10,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "游": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "费": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "甄": {
+    "strokes": 13,
+    "wuxing": "火",
+    "tone": 1
+  },
+  "娄": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "成": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "饶": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 2
+  },
+  "尤": {
+    "strokes": 4,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "祁": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "纪": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "屈": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 1
+  },
+  "鲍": {
+    "strokes": 13,
+    "wuxing": "火",
+    "tone": 4
+  },
+  "单": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 2
+  },
+  "路": {
+    "strokes": 13,
+    "wuxing": "火",
+    "tone": 4
+  },
+  "毕": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 4
+  },
+  "柯": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 1
+  },
+  "盛": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 4
+  },
+  "邬": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "米": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 3
+  },
+  "舒": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "项": {
+    "strokes": 9,
+    "wuxing": "水",
+    "tone": 4
+  },
+  "童": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "蓝": {
+    "strokes": 13,
+    "wuxing": "火",
+    "tone": 2
+  },
+  "闵": {
+    "strokes": 7,
+    "wuxing": "金",
+    "tone": 3
+  },
+  "季": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 4
+  },
+  "麻": {
+    "strokes": 11,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "强": {
+    "strokes": 12,
+    "wuxing": "木",
+    "tone": 2
+  },
+  "危": {
+    "strokes": 6,
+    "wuxing": "土",
+    "tone": 2
+  },
+  "刁": {
+    "strokes": 2,
+    "wuxing": "木",
+    "tone": 1
+  },
+  "竺": {
+    "strokes": 8,
+    "wuxing": "金",
+    "tone": 2
+  }
+}

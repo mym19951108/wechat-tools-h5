@@ -2,7 +2,7 @@
   <div class="home">
     <div class="hero">
       <h1 class="hero-title">实用工具箱</h1>
-      <p class="hero-sub">免费好用的在线工具，每天更新</p>
+      <p class="hero-sub">免费好用的在线工具，不定期更新</p>
     </div>
     <div class="tool-list">
       <router-link v-for="tool in tools" :key="tool.path" :to="tool.path" class="tool-card">
@@ -22,7 +22,7 @@
 import ToolFooter from '../shared/ToolFooter.vue'
 
 const tools = [
-  { path: '/baby-name', icon: '👶', name: '宝宝取名', desc: '按五行笔画智能生成好名字' },
+  { path: '/baby-name', icon: '☯️', name: '八字取名', desc: '分析八字五行喜忌，诗词典籍溯源，成语典故取名' },
   { path: '/english-name', icon: '🔤', name: '英文名生成', desc: '根据中文名匹配英文名' },
   { path: '/nickname', icon: '✨', name: '网名生成', desc: '古风简约可爱多种风格' },
   { path: '/mortgage', icon: '🏠', name: '房贷计算器', desc: '等额本息等额本金对比' },

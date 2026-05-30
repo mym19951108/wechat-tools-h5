@@ -7,6 +7,38 @@ import { cut } from 'jieba-wasm'
 const SCRIPTS_DIR = path.resolve('./scripts')
 const OUTPUT_DIR = path.resolve('./src/data')
 
+// Load external data
+let STROKE_DATA = {}
+let MEANING_DATA = {}
+let GENDER_DATA = { male: {}, female: {} }  // char → count
+try {
+  STROKE_DATA = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, 'stroke-data.json'), 'utf8'))
+  console.log(`Loaded stroke data: ${Object.keys(STROKE_DATA).length} chars`)
+} catch (e) { console.log('Warning: no stroke-data.json, using defaults') }
+try {
+  MEANING_DATA = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, 'char-meaning.json'), 'utf8'))
+  console.log(`Loaded meaning data: ${Object.keys(MEANING_DATA).length} chars`)
+} catch (e) { console.log('Warning: no char-meaning.json, using defaults') }
+try {
+  // Load 120W name corpus for gender statistics
+  const corpusPath = path.join(SCRIPTS_DIR, 'gender-corpus.txt')
+  const genderRaw = fs.readFileSync(corpusPath, 'utf8')
+  const genderLines = genderRaw.split('\n')
+  for (const line of genderLines) {
+    if (!line.trim()) continue
+    const [name, genderRaw] = line.split(',')
+    const gender = genderRaw ? genderRaw.trim() : ''
+    if (!name || !gender || gender === '未知') continue
+    for (const ch of name) {
+      if (gender === '男') GENDER_DATA.male[ch] = (GENDER_DATA.male[ch] || 0) + 1
+      else if (gender === '女') GENDER_DATA.female[ch] = (GENDER_DATA.female[ch] || 0) + 1
+    }
+  }
+  const maleChars = Object.keys(GENDER_DATA.male).length
+  const femaleChars = Object.keys(GENDER_DATA.female).length
+  console.log(`Loaded gender corpus: ${maleChars} male chars, ${femaleChars} female chars`)
+} catch (e) { console.log(`Warning: no gender corpus (${e.message}), using hardcoded fallback`) }
+
 // Split by Chinese punctuation to avoid cross-punctuation extractions
 const PUNCT_REGEX = /[，。！？、；：\s\n\r]+/g
 
@@ -66,6 +98,62 @@ const WHITELIST = new Set(Object.keys(MANUAL_WUXING))
 
 function getWuxing(char) { return MANUAL_WUXING[char] || null }
 
+function getStroke(char) {
+  const s = STROKE_DATA[char]
+  if (s) return s
+  // Fallback: use average for the char's wuxing group
+  const wx = getWuxing(char)
+  if (wx) {
+    const wxCandidates = Object.entries(STROKE_DATA).filter(([ch, _]) => getWuxing(ch) === wx)
+    if (wxCandidates.length > 0) {
+      return Math.round(wxCandidates.reduce((a, [_, s]) => a + s, 0) / wxCandidates.length)
+    }
+  }
+  return 8
+}
+
+function getMeaningScore(char) {
+  return MEANING_DATA[char] || 80
+}
+
+// Name quality filter — reject non-poetic words even if jieba-valid
+const NAME_BLOCKLIST = new Set([
+  // Filter 1: Province/city names
+  '山西','山东','河南','河北','湖南','湖北','广东','广西','江西','江苏',
+  '浙江','四川','贵州','云南','福建','安徽','陕西','甘肃','宁夏','西藏',
+  '新疆','海南','台湾','北京','上海','天津','重庆','江南','岭南','中原',
+  '关东','关西',
+  // Filter 3: Function word combos
+  '而已','之于','然而','所以','可以','于是','至于','及其','以及','以此',
+  '因此','何必','何不','无非','不论','不管',
+  // Filter 4: Pronoun/interrogative combos
+  '其中','何处','此人','此时','何年','何时','此日','其地',
+  // Filter 5: Historical era/place names
+  '永安','长安','建安','永和','太和','开元','天宝','贞观','洪武','永乐',
+  '乾隆','康熙','昭和','平成',
+  // Filter 6: Non-name common phrases
+  // Number-prefix — pure numbers / generic descriptors
+  '一国','万一','三万','三十','三百','九十','十一','十三','十千','千百',
+  '一十','一夕','一日','一朝','一春','一月','一秋',
+  '三十','三千','十万','百千',
+  '三奇','四方','五洲','六合','七泽','八方','九重','十方',
+  // Generic temporal/seasonal
+  '开春','入秋','过冬','初夏','晚春',
+  // Common noun phrases not suitable as names
+  '出国','入门','出门','下山','出水','入山',
+])
+
+const DIRECTIONAL_SUFFIXES = '中上下里外前后东西南北'
+
+function isNameworthy(chars) {
+  if (NAME_BLOCKLIST.has(chars)) return false
+  const c1 = chars[0], c2 = chars[1]
+  // Filter 2: X + directional suffix → mundane
+  if (DIRECTIONAL_SUFFIXES.includes(c2)) return false
+  if (DIRECTIONAL_SUFFIXES.includes(c1)) return false
+  return true
+}
+
 // Extract valid Chinese 2-char name pairs using jieba word segmentation
 function extractCombos(line) {
   const combos = []
@@ -73,24 +161,25 @@ function extractCombos(line) {
   const segments = splitSegments(line)
 
   for (const seg of segments) {
-    // Also try extracting adjacent pairs from the raw segment (catches poetic patterns jieba misses)
-    const chars = [...seg].filter(c => /^[一-鿿]$/.test(c))
-    if (chars.length >= 2) {
-      // Adjacent pairs (primary pattern)
-      for (let i = 0; i < chars.length - 1; i++) {
-        const pair = chars[i] + chars[i + 1]
-        if (!seen.has(pair)) { seen.add(pair); combos.push({ chars: pair, c1: chars[i], c2: chars[i + 1], text: seg }) }
-      }
-    }
-
-    // Jieba word-level extraction (validates against known vocabulary)
+    // 1. Jieba word extraction FIRST — validated, coherent
     const words = cut(seg)
     const word2Chars = words.filter(w => w.length === 2)
     for (const word of word2Chars) {
-      const key = word
-      if (!seen.has(key)) {
-        seen.add(key)
-        combos.push({ chars: word, c1: word[0], c2: word[1], text: seg })
+      if (!seen.has(word)) {
+        seen.add(word)
+        combos.push({ chars: word, c1: word[0], c2: word[1], text: line, coherent: true })
+      }
+    }
+
+    // 2. Adjacent pairs — only add if jieba didn't already find them
+    const chars = [...seg].filter(c => /^[一-鿿]$/.test(c))
+    if (chars.length >= 2) {
+      for (let i = 0; i < chars.length - 1; i++) {
+        const pair = chars[i] + chars[i + 1]
+        if (!seen.has(pair)) {
+          seen.add(pair)
+          combos.push({ chars: pair, c1: chars[i], c2: chars[i + 1], text: line, coherent: false })
+        }
       }
     }
   }
@@ -118,13 +207,15 @@ function processPoems(entries, sourceName, getLines) {
       const combos = extractCombos(line)
       for (const c of combos) {
         if (!isValid(c.c1, c.c2)) continue
+        if (!isNameworthy(c.chars)) continue
         all.push({
           chars: c.chars,
           char1: c.c1, char2: c.c2,
           wuxing: getWuxing(c.c1) + getWuxing(c.c2),
-          text: c.text || seg,
+          text: line,
           poem: title,
-          source: `${author}《${title}》`
+          source: `${author}《${title}》`,
+          coherent: c.coherent
         })
       }
     }
@@ -154,7 +245,15 @@ function main() {
   const sc = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, '宋词三百首.json'), 'utf8'))
   allResults.push(...processPoems(sc, '宋词', e => e.paragraphs || []))
 
-  // Deduplicate by chars
+  // 纳兰性德诗集
+  const nalan = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, '纳兰性德诗集.json'), 'utf8'))
+  allResults.push(...processPoems(nalan, '纳兰词', e => e.para || []))
+
+  // 水墨唐诗
+  const sm = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, 'shuimotangshi.json'), 'utf8'))
+  allResults.push(...processPoems(sm, '水墨唐诗', e => e.paragraphs || []))
+
+  // Deduplicate by chars + poem
   const seen = new Set()
   const unique = []
   for (const r of allResults) {
@@ -165,6 +264,11 @@ function main() {
   }
   console.log(`\nTotal unique name pairs: ${unique.length}`)
 
+  // Count coherent vs non-coherent
+  const coherentCount = unique.filter(r => r.coherent === true).length
+  const adjacentCount = unique.filter(r => r.coherent === false).length
+  console.log(`Coherent (jieba): ${coherentCount}, Adjacent pairs: ${adjacentCount}`)
+
   // Group by wuxing
   const groups = {}
   for (const r of unique) {
@@ -172,7 +276,8 @@ function main() {
     if (!groups[key]) groups[key] = []
     groups[key].push({
       chars: r.chars, char1: r.char1, char2: r.char2,
-      text: r.text, poem: r.poem, source: r.source
+      text: r.text, poem: r.poem, source: r.source,
+      coherent: r.coherent
     })
   }
 
@@ -186,36 +291,119 @@ function main() {
   for (const r of unique) {
     for (const ch of [r.char1, r.char2]) {
       if (!uniqueCharsMap[ch]) {
-        uniqueCharsMap[ch] = { char: ch, wuxing: getWuxing(ch), strokes: 8, score: 85 }
+        uniqueCharsMap[ch] = {
+          char: ch,
+          wuxing: getWuxing(ch),
+          strokes: getStroke(ch),
+          score: getMeaningScore(ch)
+        }
       }
     }
   }
   const allChars = Object.values(uniqueCharsMap)
   console.log(`Unique name chars: ${allChars.length}`)
 
-  // Gender split (heuristic)
-  const girlSet = new Set('婉妍萱琪瑶诗雅晴琳怡彤蔓颖雪悦璇昕娴淑慧妙韵翠丹凤燕莲荷梅兰桂菊柳露霜'.split(''))
-  const boySet = new Set('宇轩辰铭睿博昊哲毅霖煜航瑞璟谦朗楷泓刚强勇伟杰豪龙鹏鸿钧钦锋锐'.split(''))
-  const neutralSet = new Set('安文晨宁愿一永恒平和乐仁义礼智信善美真诚子君若如'.split(''))
-
+  // Gender split (statistical from 120W name corpus, threshold 70%)
   const boy = [], girl = [], neutral = []
-  const used = new Set()
-  for (const c of allChars) {
-    if (used.has(c.char)) continue
-    if (neutralSet.has(c.char)) { neutral.push(c); used.add(c.char) }
-    else if (girlSet.has(c.char)) { girl.push(c); used.add(c.char) }
-    else if (boySet.has(c.char)) { boy.push(c); used.add(c.char) }
+
+  function classifyGender(ch) {
+    const m = GENDER_DATA.male[ch] || 0
+    const f = GENDER_DATA.female[ch] || 0
+    const total = m + f
+    if (total < 50) return 'neutral'  // insufficient data
+    const ratio = m / total * 100
+    if (ratio >= 70) return 'boy'
+    if (ratio <= 30) return 'girl'
+    return 'neutral'
   }
+
   for (const c of allChars) {
-    if (!used.has(c.char)) { neutral.push(c); used.add(c.char) }
+    const cat = classifyGender(c.char)
+    if (cat === 'boy') boy.push(c)
+    else if (cat === 'girl') girl.push(c)
+    else neutral.push(c)
   }
 
   console.log(`Chars: boy=${boy.length} girl=${girl.length} neutral=${neutral.length}`)
 
+  // Merge mood scores if available
+  let moodScores = {}
+  try {
+    moodScores = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, 'mood-scores.json'), 'utf8'))
+    console.log(`Loaded mood scores: ${Object.keys(moodScores).length} texts`)
+  } catch (e) { console.log('No mood-scores.json, skipping 意境 scoring') }
+
+  if (Object.keys(moodScores).length > 0) {
+    for (const arr of Object.values(groups)) {
+      for (const entry of arr) {
+        const s = moodScores[entry.text]
+        if (s) entry.mood = s.total
+      }
+    }
+    console.log('Merged mood scores into poetry entries')
+  }
+
+  // Merge name annotations first
+  let annotations = {}
+  try {
+    annotations = JSON.parse(fs.readFileSync(path.join(SCRIPTS_DIR, 'name-annotations.json'), 'utf8'))
+    console.log(`Loaded name annotations: ${Object.keys(annotations).length} words`)
+  } catch (e) { console.log('No name-annotations.json') }
+
+  if (Object.keys(annotations).length > 0) {
+    for (const arr of Object.values(groups)) {
+      for (const entry of arr) {
+        if (annotations[entry.chars]) entry.annotation = annotations[entry.chars]
+      }
+    }
+    console.log('Merged annotations into poetry entries')
+  }
+
+  // Remove entries with negative annotations (must run after annotation merge)
+  const NEG_RE = /[哀悲怨恨讥讽刺危亡乱祸丧葬殁薨逝离别苦愁盼凄惨忧忡郁孤病痛苦疾]|无夫|孕|私通|淫乱|妖异|鬼怪|邪祟|可怖|狰狞|阴间|恐怖|恶魔|遭谗|遭妒害|被谗|遭害|贤愚不分|贤愚相混|不分|玉石相混|杀屠戮/
+  let removed = 0
+  for (const key of Object.keys(groups)) {
+    const before = groups[key].length
+    groups[key] = groups[key].filter(entry => {
+      if (entry.annotation && NEG_RE.test(entry.annotation)) return false
+      return true
+    })
+    removed += before - groups[key].length
+  }
+  console.log(`Removed ${removed} negative-context entries`)
+  // Deduplicate entries within each group
+  let dedupRemoved = 0
+  for (const key of Object.keys(groups)) {
+    const seen = new Set()
+    const before = groups[key].length
+    groups[key] = groups[key].filter(entry => {
+      const k = entry.chars + '|' + entry.text.substring(0, 20)
+      if (seen.has(k)) { dedupRemoved++; return false }
+      seen.add(k)
+      return true
+    })
+  }
+  console.log(`Deduplicated ${dedupRemoved} duplicate entries`)
+
+  // Remove entries without annotations and entries with 佚名 source
+  let noAnnoRemoved = 0, yiMingRemoved = 0
+  for (const key of Object.keys(groups)) {
+    const before = groups[key].length
+    groups[key] = groups[key].filter(entry => {
+      if (!entry.annotation) { noAnnoRemoved++; return false }
+      if (entry.source && entry.source.includes('佚名')) { yiMingRemoved++; return false }
+      return true
+    })
+  }
+  console.log(`Removed ${noAnnoRemoved} no-annotation entries`)
+  console.log(`Removed ${yiMingRemoved} 佚名 entries`)
+
   // Write outputs
   const poetryContent = `// Generated by scripts/build-poetry-db.js from local poetry JSON
-// Sources: 诗经(305) 楚辞(65) 唐诗三百首(366) 宋词三百首(280)
+// Sources: 诗经 楚辞 唐诗三百首 宋词三百首 纳兰词 水墨唐诗
 // Total: ${unique.length} unique name pairs, ${allChars.length} unique chars
+// Coherent (jieba): ${coherentCount}, Adjacent: ${adjacentCount}
+// Mood scoring: ${Object.keys(moodScores).length} texts scored
 export const wuxingPoetryNames = ${JSON.stringify(groups, null, 2)}
 `
 

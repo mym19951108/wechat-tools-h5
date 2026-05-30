@@ -517,7 +517,7 @@ Replace `src/pages/Home.vue`:
   <div class="home">
     <div class="hero">
       <h1 class="hero-title">实用工具箱</h1>
-      <p class="hero-sub">免费好用的在线工具，每天更新</p>
+      <p class="hero-sub">免费好用的在线工具，不定期更新</p>
     </div>
     <div class="tool-list">
       <router-link v-for="tool in tools" :key="tool.path" :to="tool.path" class="tool-card">

@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "lunar-javascript": "^1.7.7",
+    "mystilight-8char": "^1.0.0",
     "vue": "^3.4.0",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
     "@vitejs/plugin-vue": "^5.0.0",
     "jieba-wasm": "^2.4.0",
     "jsdom": "^25.0.0",

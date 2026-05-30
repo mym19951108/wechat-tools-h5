@@ -2,596 +2,100 @@
 export const nameChars = {
   boy: [
   {
-    "char": "鸿",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "钦",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "轩",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "昊",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "辰",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "刚",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "博",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "强",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "宇",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "钧",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "霖",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "豪",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "杰",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "龙",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "哲",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "朗",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "瑞",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  }
-],
-  girl: [
-  {
-    "char": "露",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "雪",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "燕",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "婉",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "荷",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "淑",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "颖",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "兰",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "菊",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "瑶",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "梅",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "霜",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "桂",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "慧",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "雅",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "怡",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "凤",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "丹",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "晴",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "柳",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "翠",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "彤",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "蔓",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "韵",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "莲",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "诗",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "妙",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  }
-],
-  neutral: [
-  {
-    "char": "君",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "子",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "永",
     "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "如",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "善",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "一",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "宁",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "美",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "乐",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "晨",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "和",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "礼",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "安",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "信",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "平",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "若",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "文",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "诚",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "真",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "仁",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "义",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "智",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
+    "strokes": 5,
+    "score": 97
   },
   {
     "char": "怀",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "中",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "林",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
+    "strokes": 7,
+    "score": 86
   },
   {
     "char": "则",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "心",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "南",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "山",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
+    "strokes": 6,
+    "score": 89
   },
   {
     "char": "实",
     "wuxing": "金",
     "strokes": 8,
-    "score": 85
+    "score": 87
   },
   {
     "char": "三",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "春",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "玉",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "华",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "雨",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 3,
+    "score": 78
   },
   {
     "char": "仲",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
+    "strokes": 6,
+    "score": 92
   },
   {
     "char": "日",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "月",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "云",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 4,
+    "score": 100
   },
   {
     "char": "远",
     "wuxing": "土",
-    "strokes": 8,
-    "score": 85
+    "strokes": 7,
+    "score": 99
   },
   {
     "char": "天",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
+    "strokes": 4,
+    "score": 96
   },
   {
-    "char": "北",
+    "char": "鸿",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 11,
+    "score": 95
   },
   {
-    "char": "风",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "思",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "char": "山",
+    "wuxing": "土",
+    "strokes": 3,
+    "score": 95
   },
   {
     "char": "河",
     "wuxing": "水",
     "strokes": 8,
-    "score": 85
+    "score": 92
   },
   {
-    "char": "千",
+    "char": "善",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "竹",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "青",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 12,
+    "score": 95
   },
   {
     "char": "星",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "金",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 9,
+    "score": 97
   },
   {
     "char": "伯",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "秋",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "异",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
+    "strokes": 7,
+    "score": 91
   },
   {
     "char": "国",
     "wuxing": "木",
     "strokes": 8,
-    "score": 85
+    "score": 92
   },
   {
     "char": "叔",
@@ -600,58 +104,40 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "英",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
     "char": "兴",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 6,
+    "score": 78
   },
   {
     "char": "明",
     "wuxing": "火",
     "strokes": 8,
-    "score": 85
+    "score": 96
   },
   {
-    "char": "清",
+    "char": "一",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 1,
+    "score": 88
   },
   {
-    "char": "百",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "char": "乐",
+    "wuxing": "火",
+    "strokes": 5,
+    "score": 95
   },
   {
     "char": "大",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
+    "strokes": 3,
+    "score": 89
   },
   {
     "char": "康",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "白",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "石",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
+    "strokes": 11,
+    "score": 99
   },
   {
     "char": "念",
@@ -660,106 +146,418 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "夏",
-    "wuxing": "火",
-    "strokes": 8,
+    "char": "钦",
+    "wuxing": "金",
+    "strokes": 9,
     "score": 85
   },
   {
     "char": "朝",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 12,
+    "score": 96
   },
   {
     "char": "九",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "秀",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "十",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 2,
+    "score": 78
   },
   {
     "char": "亨",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 7,
+    "score": 92
   },
   {
     "char": "万",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 3,
+    "score": 87
   },
   {
     "char": "寿",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 7,
+    "score": 89
   },
   {
-    "char": "东",
-    "wuxing": "木",
+    "char": "和",
+    "wuxing": "水",
     "strokes": 8,
-    "score": 85
+    "score": 96
   },
   {
-    "char": "西",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "嘉",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
+    "char": "百",
+    "wuxing": "水",
+    "strokes": 6,
+    "score": 89
   },
   {
     "char": "松",
     "wuxing": "木",
     "strokes": 8,
-    "score": 85
+    "score": 99
   },
   {
     "char": "柏",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
+    "strokes": 9,
+    "score": 100
   },
   {
     "char": "德",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
+    "strokes": 15,
+    "score": 99
   },
   {
     "char": "福",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 13,
+    "score": 96
+  },
+  {
+    "char": "轩",
+    "wuxing": "土",
+    "strokes": 7,
+    "score": 87
   },
   {
     "char": "元",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
+    "strokes": 4,
+    "score": 89
   },
   {
     "char": "吉",
     "wuxing": "木",
+    "strokes": 6,
+    "score": 100
+  },
+  {
+    "char": "茂",
+    "wuxing": "木",
     "strokes": 8,
+    "score": 92
+  },
+  {
+    "char": "岩",
+    "wuxing": "土",
+    "strokes": 8,
+    "score": 89
+  },
+  {
+    "char": "昊",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 90
+  },
+  {
+    "char": "正",
+    "wuxing": "金",
+    "strokes": 5,
+    "score": 88
+  },
+  {
+    "char": "礼",
+    "wuxing": "火",
+    "strokes": 5,
+    "score": 98
+  },
+  {
+    "char": "浩",
+    "wuxing": "水",
+    "strokes": 10,
+    "score": 92
+  },
+  {
+    "char": "富",
+    "wuxing": "水",
+    "strokes": 12,
+    "score": 87
+  },
+  {
+    "char": "辰",
+    "wuxing": "土",
+    "strokes": 7,
+    "score": 88
+  },
+  {
+    "char": "安",
+    "wuxing": "土",
+    "strokes": 6,
+    "score": 98
+  },
+  {
+    "char": "信",
+    "wuxing": "金",
+    "strokes": 9,
+    "score": 99
+  },
+  {
+    "char": "树",
+    "wuxing": "木",
+    "strokes": 9,
+    "score": 89
+  },
+  {
+    "char": "道",
+    "wuxing": "火",
+    "strokes": 12,
+    "score": 86
+  },
+  {
+    "char": "启",
+    "wuxing": "木",
+    "strokes": 7,
+    "score": 86
+  },
+  {
+    "char": "平",
+    "wuxing": "水",
+    "strokes": 5,
+    "score": 78
+  },
+  {
+    "char": "林",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 88
+  },
+  {
+    "char": "世",
+    "wuxing": "金",
+    "strokes": 5,
+    "score": 90
+  },
+  {
+    "char": "长",
+    "wuxing": "火",
+    "strokes": 4,
+    "score": 91
+  },
+  {
+    "char": "达",
+    "wuxing": "火",
+    "strokes": 6,
+    "score": 100
+  },
+  {
+    "char": "泉",
+    "wuxing": "水",
+    "strokes": 9,
+    "score": 87
+  },
+  {
+    "char": "度",
+    "wuxing": "木",
+    "strokes": 9,
+    "score": 90
+  },
+  {
+    "char": "刚",
+    "wuxing": "金",
+    "strokes": 6,
     "score": 85
+  },
+  {
+    "char": "文",
+    "wuxing": "水",
+    "strokes": 4,
+    "score": 98
+  },
+  {
+    "char": "江",
+    "wuxing": "水",
+    "strokes": 6,
+    "score": 91
+  },
+  {
+    "char": "光",
+    "wuxing": "火",
+    "strokes": 6,
+    "score": 90
+  },
+  {
+    "char": "开",
+    "wuxing": "木",
+    "strokes": 4,
+    "score": 87
+  },
+  {
+    "char": "熙",
+    "wuxing": "水",
+    "strokes": 14,
+    "score": 92
+  },
+  {
+    "char": "荣",
+    "wuxing": "木",
+    "strokes": 9,
+    "score": 85
+  },
+  {
+    "char": "丰",
+    "wuxing": "火",
+    "strokes": 4,
+    "score": 86
+  },
+  {
+    "char": "隆",
+    "wuxing": "火",
+    "strokes": 11,
+    "score": 78
+  },
+  {
+    "char": "望",
+    "wuxing": "水",
+    "strokes": 11,
+    "score": 88
+  },
+  {
+    "char": "少",
+    "wuxing": "金",
+    "strokes": 4,
+    "score": 90
+  },
+  {
+    "char": "博",
+    "wuxing": "水",
+    "strokes": 12,
+    "score": 98
+  },
+  {
+    "char": "良",
+    "wuxing": "火",
+    "strokes": 7,
+    "score": 86
+  },
+  {
+    "char": "超",
+    "wuxing": "金",
+    "strokes": 12,
+    "score": 92
+  },
+  {
+    "char": "强",
+    "wuxing": "木",
+    "strokes": 12,
+    "score": 86
+  },
+  {
+    "char": "海",
+    "wuxing": "水",
+    "strokes": 10,
+    "score": 95
+  },
+  {
+    "char": "理",
+    "wuxing": "火",
+    "strokes": 11,
+    "score": 87
+  },
+  {
+    "char": "昌",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 98
+  },
+  {
+    "char": "地",
+    "wuxing": "土",
+    "strokes": 6,
+    "score": 87
+  },
+  {
+    "char": "承",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 92
+  },
+  {
+    "char": "宇",
+    "wuxing": "土",
+    "strokes": 6,
+    "score": 86
+  },
+  {
+    "char": "志",
+    "wuxing": "火",
+    "strokes": 7,
+    "score": 88
+  },
+  {
+    "char": "法",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 88
+  },
+  {
+    "char": "诚",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 98
+  },
+  {
+    "char": "章",
+    "wuxing": "火",
+    "strokes": 11,
+    "score": 91
+  },
+  {
+    "char": "贵",
+    "wuxing": "木",
+    "strokes": 9,
+    "score": 88
+  },
+  {
+    "char": "延",
+    "wuxing": "土",
+    "strokes": 6,
+    "score": 90
+  },
+  {
+    "char": "千",
+    "wuxing": "金",
+    "strokes": 3,
+    "score": 88
+  },
+  {
+    "char": "钧",
+    "wuxing": "金",
+    "strokes": 9,
+    "score": 92
+  },
+  {
+    "char": "奇",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 88
+  },
+  {
+    "char": "霖",
+    "wuxing": "水",
+    "strokes": 16,
+    "score": 91
+  },
+  {
+    "char": "盛",
+    "wuxing": "金",
+    "strokes": 11,
+    "score": 99
+  },
+  {
+    "char": "通",
+    "wuxing": "火",
+    "strokes": 10,
+    "score": 95
+  },
+  {
+    "char": "意",
+    "wuxing": "土",
+    "strokes": 13,
+    "score": 91
   },
   {
     "char": "泽",
@@ -768,448 +566,638 @@ export const nameChars = {
     "score": 85
   },
   {
-    "char": "幽",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "茂",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "岩",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "正",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "然",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "浩",
+    "char": "豪",
     "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 14,
+    "score": 98
   },
   {
-    "char": "夕",
+    "char": "杰",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 97
+  },
+  {
+    "char": "仁",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 4,
+    "score": 100
   },
   {
-    "char": "富",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "树",
+    "char": "义",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
+    "strokes": 3,
+    "score": 95
   },
   {
-    "char": "道",
+    "char": "龙",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "启",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "冬",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "钟",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "世",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "长",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "达",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "静",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "泉",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "度",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "海",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "江",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "光",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "开",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "纯",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "熙",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "芳",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "荣",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "丰",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "隆",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "望",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "少",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "良",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "欣",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "素",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "超",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "代",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "岳",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "季",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "巧",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "理",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "昌",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "地",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "承",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "卓",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "志",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "法",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "章",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "贵",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "延",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "洁",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "奇",
-    "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "盛",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "通",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "意",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "利",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "贞",
-    "wuxing": "火",
-    "strokes": 8,
-    "score": 85
+    "strokes": 5,
+    "score": 98
   },
   {
     "char": "庆",
     "wuxing": "木",
-    "strokes": 8,
+    "strokes": 6,
     "score": 85
+  },
+  {
+    "char": "智",
+    "wuxing": "火",
+    "strokes": 12,
+    "score": 96
   },
   {
     "char": "继",
     "wuxing": "木",
-    "strokes": 8,
+    "strokes": 10,
     "score": 85
+  },
+  {
+    "char": "哲",
+    "wuxing": "火",
+    "strokes": 10,
+    "score": 99
   },
   {
     "char": "越",
     "wuxing": "土",
-    "strokes": 8,
+    "strokes": 12,
     "score": 85
   },
   {
-    "char": "紫",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "char": "朗",
+    "wuxing": "火",
+    "strokes": 10,
+    "score": 88
   },
   {
     "char": "镜",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "溪",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 16,
+    "score": 89
   },
   {
     "char": "湖",
     "wuxing": "水",
-    "strokes": 8,
+    "strokes": 12,
     "score": 85
   },
   {
     "char": "峰",
     "wuxing": "土",
-    "strokes": 8,
-    "score": 85
+    "strokes": 10,
+    "score": 88
   },
   {
     "char": "雄",
     "wuxing": "水",
+    "strokes": 12,
+    "score": 90
+  },
+  {
+    "char": "岳",
+    "wuxing": "木",
     "strokes": 8,
-    "score": 85
+    "score": 87
   },
   {
     "char": "耀",
     "wuxing": "火",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "淡",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "涵",
-    "wuxing": "水",
-    "strokes": 8,
-    "score": 85
+    "strokes": 20,
+    "score": 95
   },
   {
     "char": "健",
     "wuxing": "木",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "忆",
-    "wuxing": "土",
-    "strokes": 8,
-    "score": 85
+    "strokes": 10,
+    "score": 90
   },
   {
     "char": "壮",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
-  },
-  {
-    "char": "银",
-    "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 6,
+    "score": 87
   },
   {
     "char": "锦",
     "wuxing": "金",
-    "strokes": 8,
-    "score": 85
+    "strokes": 13,
+    "score": 95
   },
   {
     "char": "岭",
     "wuxing": "土",
     "strokes": 8,
+    "score": 90
+  },
+  {
+    "char": "辉",
+    "wuxing": "火",
+    "strokes": 12,
+    "score": 100
+  },
+  {
+    "char": "鹤",
+    "wuxing": "水",
+    "strokes": 15,
+    "score": 96
+  }
+],
+  girl: [
+  {
+    "char": "君",
+    "wuxing": "木",
+    "strokes": 7,
+    "score": 97
+  },
+  {
+    "char": "心",
+    "wuxing": "金",
+    "strokes": 4,
+    "score": 90
+  },
+  {
+    "char": "雨",
+    "wuxing": "水",
+    "strokes": 8,
+    "score": 78
+  },
+  {
+    "char": "月",
+    "wuxing": "木",
+    "strokes": 4,
+    "score": 99
+  },
+  {
+    "char": "雪",
+    "wuxing": "水",
+    "strokes": 11,
+    "score": 92
+  },
+  {
+    "char": "燕",
+    "wuxing": "火",
+    "strokes": 16,
+    "score": 97
+  },
+  {
+    "char": "婉",
+    "wuxing": "土",
+    "strokes": 11,
     "score": 85
+  },
+  {
+    "char": "竹",
+    "wuxing": "木",
+    "strokes": 6,
+    "score": 98
+  },
+  {
+    "char": "秋",
+    "wuxing": "金",
+    "strokes": 9,
+    "score": 100
+  },
+  {
+    "char": "英",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 99
+  },
+  {
+    "char": "荷",
+    "wuxing": "木",
+    "strokes": 10,
+    "score": 97
+  },
+  {
+    "char": "风",
+    "wuxing": "水",
+    "strokes": 4,
+    "score": 97
+  },
+  {
+    "char": "美",
+    "wuxing": "水",
+    "strokes": 9,
+    "score": 96
+  },
+  {
+    "char": "露",
+    "wuxing": "水",
+    "strokes": 21,
+    "score": 92
+  },
+  {
+    "char": "淑",
+    "wuxing": "金",
+    "strokes": 11,
+    "score": 98
+  },
+  {
+    "char": "秀",
+    "wuxing": "金",
+    "strokes": 7,
+    "score": 87
+  },
+  {
+    "char": "冬",
+    "wuxing": "水",
+    "strokes": 5,
+    "score": 95
+  },
+  {
+    "char": "颖",
+    "wuxing": "木",
+    "strokes": 13,
+    "score": 86
+  },
+  {
+    "char": "静",
+    "wuxing": "金",
+    "strokes": 14,
+    "score": 95
+  },
+  {
+    "char": "若",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 88
+  },
+  {
+    "char": "兰",
+    "wuxing": "木",
+    "strokes": 5,
+    "score": 95
+  },
+  {
+    "char": "菊",
+    "wuxing": "木",
+    "strokes": 11,
+    "score": 96
+  },
+  {
+    "char": "芳",
+    "wuxing": "木",
+    "strokes": 7,
+    "score": 86
+  },
+  {
+    "char": "瑶",
+    "wuxing": "火",
+    "strokes": 14,
+    "score": 98
+  },
+  {
+    "char": "欣",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 87
+  },
+  {
+    "char": "素",
+    "wuxing": "金",
+    "strokes": 10,
+    "score": 85
+  },
+  {
+    "char": "巧",
+    "wuxing": "木",
+    "strokes": 5,
+    "score": 88
+  },
+  {
+    "char": "梅",
+    "wuxing": "木",
+    "strokes": 11,
+    "score": 97
+  },
+  {
+    "char": "霜",
+    "wuxing": "水",
+    "strokes": 17,
+    "score": 85
+  },
+  {
+    "char": "真",
+    "wuxing": "金",
+    "strokes": 10,
+    "score": 97
+  },
+  {
+    "char": "桂",
+    "wuxing": "木",
+    "strokes": 10,
+    "score": 95
+  },
+  {
+    "char": "慧",
+    "wuxing": "水",
+    "strokes": 15,
+    "score": 96
+  },
+  {
+    "char": "洁",
+    "wuxing": "水",
+    "strokes": 9,
+    "score": 87
+  },
+  {
+    "char": "雅",
+    "wuxing": "木",
+    "strokes": 12,
+    "score": 99
+  },
+  {
+    "char": "怡",
+    "wuxing": "土",
+    "strokes": 8,
+    "score": 100
+  },
+  {
+    "char": "贞",
+    "wuxing": "火",
+    "strokes": 6,
+    "score": 86
+  },
+  {
+    "char": "凤",
+    "wuxing": "水",
+    "strokes": 4,
+    "score": 99
+  },
+  {
+    "char": "丹",
+    "wuxing": "火",
+    "strokes": 4,
+    "score": 89
+  },
+  {
+    "char": "紫",
+    "wuxing": "金",
+    "strokes": 12,
+    "score": 91
+  },
+  {
+    "char": "晴",
+    "wuxing": "火",
+    "strokes": 12,
+    "score": 86
+  },
+  {
+    "char": "翠",
+    "wuxing": "金",
+    "strokes": 14,
+    "score": 92
+  },
+  {
+    "char": "涵",
+    "wuxing": "水",
+    "strokes": 11,
+    "score": 91
+  },
+  {
+    "char": "彤",
+    "wuxing": "火",
+    "strokes": 7,
+    "score": 88
+  },
+  {
+    "char": "蔓",
+    "wuxing": "木",
+    "strokes": 14,
+    "score": 90
+  },
+  {
+    "char": "忆",
+    "wuxing": "土",
+    "strokes": 4,
+    "score": 87
+  },
+  {
+    "char": "韵",
+    "wuxing": "土",
+    "strokes": 13,
+    "score": 90
+  },
+  {
+    "char": "莲",
+    "wuxing": "木",
+    "strokes": 10,
+    "score": 96
+  },
+  {
+    "char": "诗",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 100
+  },
+  {
+    "char": "妙",
+    "wuxing": "水",
+    "strokes": 7,
+    "score": 89
+  },
+  {
+    "char": "璇",
+    "wuxing": "火",
+    "strokes": 15,
+    "score": 100
+  }
+],
+  neutral: [
+  {
+    "char": "子",
+    "wuxing": "水",
+    "strokes": 3,
+    "score": 98
+  },
+  {
+    "char": "如",
+    "wuxing": "金",
+    "strokes": 6,
+    "score": 89
+  },
+  {
+    "char": "春",
+    "wuxing": "木",
+    "strokes": 9,
+    "score": 98
+  },
+  {
+    "char": "玉",
+    "wuxing": "金",
+    "strokes": 5,
+    "score": 99
+  },
+  {
+    "char": "华",
+    "wuxing": "水",
+    "strokes": 6,
+    "score": 78
+  },
+  {
+    "char": "云",
+    "wuxing": "水",
+    "strokes": 4,
+    "score": 98
+  },
+  {
+    "char": "思",
+    "wuxing": "金",
+    "strokes": 9,
+    "score": 89
+  },
+  {
+    "char": "青",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 90
+  },
+  {
+    "char": "金",
+    "wuxing": "金",
+    "strokes": 8,
+    "score": 100
+  },
+  {
+    "char": "异",
+    "wuxing": "土",
+    "strokes": 6,
+    "score": 90
+  },
+  {
+    "char": "宁",
+    "wuxing": "火",
+    "strokes": 5,
+    "score": 98
+  },
+  {
+    "char": "清",
+    "wuxing": "水",
+    "strokes": 11,
+    "score": 97
+  },
+  {
+    "char": "白",
+    "wuxing": "水",
+    "strokes": 5,
+    "score": 88
+  },
+  {
+    "char": "石",
+    "wuxing": "土",
+    "strokes": 5,
+    "score": 86
+  },
+  {
+    "char": "晨",
+    "wuxing": "火",
+    "strokes": 11,
+    "score": 87
+  },
+  {
+    "char": "十",
+    "wuxing": "金",
+    "strokes": 2,
+    "score": 78
+  },
+  {
+    "char": "嘉",
+    "wuxing": "木",
+    "strokes": 14,
+    "score": 100
+  },
+  {
+    "char": "然",
+    "wuxing": "金",
+    "strokes": 12,
+    "score": 85
+  },
+  {
+    "char": "夕",
+    "wuxing": "金",
+    "strokes": 3,
+    "score": 97
+  },
+  {
+    "char": "钟",
+    "wuxing": "金",
+    "strokes": 9,
+    "score": 90
+  },
+  {
+    "char": "夏",
+    "wuxing": "火",
+    "strokes": 10,
+    "score": 99
+  },
+  {
+    "char": "纯",
+    "wuxing": "金",
+    "strokes": 7,
+    "score": 86
+  },
+  {
+    "char": "幽",
+    "wuxing": "土",
+    "strokes": 9,
+    "score": 91
+  },
+  {
+    "char": "代",
+    "wuxing": "火",
+    "strokes": 5,
+    "score": 91
+  },
+  {
+    "char": "季",
+    "wuxing": "木",
+    "strokes": 8,
+    "score": 86
+  },
+  {
+    "char": "卓",
+    "wuxing": "火",
+    "strokes": 8,
+    "score": 91
+  },
+  {
+    "char": "利",
+    "wuxing": "火",
+    "strokes": 7,
+    "score": 85
+  },
+  {
+    "char": "溪",
+    "wuxing": "水",
+    "strokes": 13,
+    "score": 86
+  },
+  {
+    "char": "柳",
+    "wuxing": "木",
+    "strokes": 9,
+    "score": 90
+  },
+  {
+    "char": "淡",
+    "wuxing": "水",
+    "strokes": 11,
+    "score": 92
+  },
+  {
+    "char": "银",
+    "wuxing": "金",
+    "strokes": 11,
+    "score": 91
+  },
+  {
+    "char": "瑞",
+    "wuxing": "金",
+    "strokes": 13,
+    "score": 95
   }
 ]
 }

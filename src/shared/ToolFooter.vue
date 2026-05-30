@@ -15,7 +15,7 @@
 
 <script setup>
 const tools = [
-  { path: '/baby-name', icon: '👶', name: '宝宝取名' },
+  { path: '/baby-name', icon: '☯️', name: '八字取名' },
   { path: '/english-name', icon: '🔤', name: '英文名' },
   { path: '/nickname', icon: '✨', name: '网名生成' },
   { path: '/mortgage', icon: '🏠', name: '房贷计算' },
